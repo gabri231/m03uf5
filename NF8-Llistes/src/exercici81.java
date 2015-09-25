@@ -44,7 +44,7 @@ public class exercici81 {
 		System.out.println("\n--------------------------------------------------------------------------------------------");
 		
 		boolean a;
-		a = array.contains(28657);//4311
+		a = array.contains(4311);//4311 - Contenido a buscar dentro del Array
 		if(a){
 			System.out.print("El array contiene 4311.");
 		}
