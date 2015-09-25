@@ -43,9 +43,8 @@ public class exercici81 {
 		
 		System.out.println("\n--------------------------------------------------------------------------------------------");
 		
-		boolean a;
-		a = array.contains(4311);//4311 - Contenido a buscar dentro del Array
-		if(a){
+		// array.contains(); Te devuelve 'true' si existe el valor introducido. Devuelve 'false' si es que no existe.
+		if(array.contains(4311)){
 			System.out.print("El array contiene 4311.");
 		}
 		else{
