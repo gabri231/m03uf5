@@ -1,4 +1,3 @@
-
 public class coche {
 	String marca, modelo;
 	int cilindrada, cilindres;
