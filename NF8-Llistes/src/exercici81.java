@@ -39,7 +39,7 @@ public class exercici81 {
 		
 		System.out.println("\n--------------------------------------------------------------------------------------------");
 		
-		System.out.print("La posición de 2584 dentro del Arraylist és " + array.indexOf(2584));
+		System.out.print("La posiciÃ³n de 2584 dentro del Arraylist es " + array.indexOf(2584));
 		
 		System.out.println("\n--------------------------------------------------------------------------------------------");
 		
