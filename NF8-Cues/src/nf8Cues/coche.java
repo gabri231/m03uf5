@@ -1,3 +1,7 @@
+package nf8Cues;
+//import java.util.LinkedList;
+//import java.util.ListIterator;
+
 public class coche {
 	String marca, modelo;
 	int cilindrada, cilindres;
@@ -8,6 +12,9 @@ public class coche {
 		this.modelo = modelo;
 		this.cilindrada = cilindrada;
 		this.cilindres = cilindres;
+	}
+	public coche() {
+
 	}
 	
 	// Set and Get
@@ -40,6 +47,7 @@ public class coche {
 		double potencia = 0.08 * this.cilindres * Math.pow((this.cilindrada / this.cilindres), 0.6);
 		return potencia;
 	}
-	
-
+	public void prueba(){
+		System.out.println("Esto es una linea de prueba");
+	}
 }
