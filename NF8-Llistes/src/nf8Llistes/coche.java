@@ -1,9 +1,10 @@
+package nf8Llistes;
 public class coche {
 	String marca, modelo;
 	int cilindrada, cilindres;
 		
 	// Constructor
-	public coche(String marca, String modelo, int cilindrada, int cilindres) {
+	public coche(String marca, String modelo, int cilindrada, int cilindres){
 		this.marca = marca;
 		this.modelo = modelo;
 		this.cilindrada = cilindrada;
