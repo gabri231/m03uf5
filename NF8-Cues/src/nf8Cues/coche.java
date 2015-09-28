@@ -47,7 +47,4 @@ public class coche {
 		double potencia = 0.08 * this.cilindres * Math.pow((this.cilindrada / this.cilindres), 0.6);
 		return potencia;
 	}
-	public void prueba(){
-		System.out.println("Esto es una linea de prueba");
-	}
 }
