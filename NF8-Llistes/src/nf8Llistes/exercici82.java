@@ -45,16 +45,12 @@ public class exercici82 {
 		
 		//////////////////////////////////////////////////////////////////////////////////////////////
 		// AGREGAR UN OBJETO TIPO COCHE EN LA POSICIÓN 1
-		// Se añade el objeto tipo coche "Audi A8" en la posición 1.
-		// Se comprueba que Audi A8 esté en la posición 1.
 		System.out.println("Se añade el objeto tipo coche \"Audi A8\" en la posición 1.");
 		
 		// Se añade Audi A8 en la posición 1
 		array.add(1,new coche("Audi", "A8", 4600, 8));
 		
-		// En esta sección se recorre el array buscando el objeto Audi A8.
-		// Una vez encontrado el objeto AUDI se comprueba si está en la posición 1.
-		// Se crea el atributo 'encontrado' de tipo boolean 
+		// Se crea el atributo 'encontrado' de tipo boolean para romper el bucle cuando encuentre a AUDI A8 
 		boolean encontrado = false;
 		
 		// Se recorre el array buscando el objeto Audi A8 para determinar si su posición en el array es 1.
@@ -67,8 +63,9 @@ public class exercici82 {
 					System.out.println("Audi A8 esta en la posición 1.");
 				}
 				else{
-					System.out.println("Audi no está en la posición 1.");
-				}	
+					System.out.println("Audi A8 no está en la posición 1.");
+				}
+				// Una vez que se ha encontrado el objeto Audi A8, se termina la busqueda para optimizar el proceso.
 				encontrado = true;
 			}
 		}	
@@ -77,17 +74,20 @@ public class exercici82 {
 		
 		/////////////////////////////////////////////////////////////////////////////////////////////
 		// Substitueix el Seat Ibiza per un “Seat Mii 1000 3”
-		// Se encuentra el objeto Seat Ibiza y sustituye por otros valores.
+		// 
+		
 		encontrado = false;
 		// Se recorre el array buscando el objeto Seat Ibiza para sustituirlo por un "Seat Mii 100 3".
 		// Una vez encontrado el objeto no se recorre más el bucle para no cargar el sistema.
 		// Cuando se encuentra el objeto Seat Ibiza, el atributo 'encontrado' se estable en true i se rompe la condición del bucle FOR.
 		for (int i = 0; i < array.size() && encontrado==false; i++) {
 			if(array.get(i).getMarca() == "Seat" && array.get(i).getModelo() == "Ibiza"){
-				// Se comprueba si Audi A8 está en la posición 1 para imprimir la confirmación o negación
 				System.out.println("Se sustituye el Seat Ibiza por:\"Seat Mii 1000 3\"");
+				// Cuando el filtro encuentra al SEAT IBIZA se borra el contenido de todo el coche.
 				array.remove(i);
+				// Una vez que se borra, se inserta el SEAT MII en la misma posición que el seat ibiza. De esta forma se sustituye el coche.
 				array.add(i,new coche("Seat", "Mii", 1000, 3));
+				// Se cancela la busqueda de SEAT IBIZA.
 				encontrado = true;
 			}
 		}
