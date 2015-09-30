@@ -1,6 +1,8 @@
 package nf8Cues;
 import java.util.LinkedList;
 
+import nf8Cues.CuaOrdenada.Golfista;
+
 /** Un programa Java simple - Colas 
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
  * Imprime una tabla con los valores de un LinkedList tipo Clase coche
@@ -123,7 +125,32 @@ public class exercici83 {
 		// Se comprueba si es que se ha encontrado un coche. Si es falso, es que no se ha encontrado e imprime negación.
 		if(!comprobador){
 			System.out.println("--> No se ha encontrado ningún Hyundai Atos.");
-		}	
+		}
+		
+		
+		// Finalmente imprimimos toda la lista utilizando el metodo .poll()
+		linea();
+		System.out.println("\t\tImprimimos la lista con el metodo .poll()");
+		linea();
+		while (!lista.isEmpty())
+		{
+			// Se recoge el tamaño de la lista para ir imprimiendolo y viendo que con el metodo .poll(); La lista se va reduciendo.
+			int cantLista = lista.size();
+			coche car = lista.poll();
+			System.out.println("|"
+					+ String.format("%1$-13s",car.getMarca())
+					+ "|  "
+					+String.format("%1$-10s",car.getModelo())
+					+"|   "
+					+car.getCilindrada()
+					+"\t|   "
+					+car.getCilindres()
+					+"\t|   "
+					+ car.pontenciaFiscal()+"\t|"
+					+ "Tamaño lista: " + cantLista);
+		}
+		linea();	
+		
 	}
 	
 	//Fin de main	
