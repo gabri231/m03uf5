@@ -76,16 +76,12 @@ public class exercici84 {
 		}
 		*/
 		PriorityQueue<cuaCilindrada> cuaOrdenadaPerCilindrada = new PriorityQueue<cuaCilindrada>();
-		cuaOrdenadaPerCilindrada.offer(new cuaCilindrada("asdasd","asdasdasd",123,23));
+		//cuaOrdenadaPerCilindrada.offer(null);
 		
-		for (coche car : fifoAutos){
-			System.out.println(car.getMarca() + car.getModelo()+ car.getCilindrada()+car.getCilindres());
-			cuaOrdenadaPerCilindrada.offer(new cuaCilindrada(car.getMarca(), car.getModelo(), car.getCilindrada(),car.getCilindres()));
-		}
-		
-		for (cuaCilindrada cua : cuaOrdenadaPerCilindrada){
-			System.out.print(cua.getMarca() + "\n");
-		}
+		//for (coche car : fifoAutos){
+			//cuaOrdenadaPerCilindrada.offer(new coche(car.getMarca(), car.getModelo(), car.getCilindrada(),car.getCilindres()));
+		//}
+		//Fin de main
 	}
 	
 	//Fin de main	
@@ -117,9 +113,6 @@ public class exercici84 {
 	// Se define la clase cuaCilindrada
 	// Es una clase heredada de coche.
 	public static class cuaCilindrada extends coche implements Comparable<cuaCilindrada> {
-		public cuaCilindrada(String string, String string2, int i, int j) {
-			// TODO Auto-generated constructor stub
-		}
 
 		public int compareTo(cuaCilindrada car) {
 			cuaCilindrada that = (cuaCilindrada) car;

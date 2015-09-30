@@ -41,7 +41,6 @@ public class CuaOrdenada {
 			Golfista hal = new Golfista("Hal Sutton", 69);
 			Golfista tiger = new Golfista("Tiger Woods", 61);
 
-			System.out.println(phil+"\n");
 			PriorityQueue<Golfista> pq = new PriorityQueue<Golfista>();
 			pq.offer(tiger);
 			pq.offer(phil);
