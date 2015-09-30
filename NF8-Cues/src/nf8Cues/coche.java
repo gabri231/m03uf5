@@ -1,6 +1,6 @@
 package nf8Cues;
 
-public class coche {
+public class coche implements Comparable<Object>  {
 	String marca, modelo;
 	int cilindrada, cilindres;
 		
@@ -45,5 +45,19 @@ public class coche {
 	public double pontenciaFiscal() {
 		double potencia = 0.08 * this.cilindres * Math.pow((this.cilindrada / this.cilindres), 0.6);
 		return potencia;
+	}
+	
+	// CompareTo Para organizarlos por cilindrada. 
+	public int compareTo(Object car) {
+		coche that = (coche) car;
+		int a = this.getCilindrada();
+		int b = that.getCilindrada();
+
+		// for golfers, low is good!
+		if (a > b)
+			return 1;
+		if (a < b)
+			return -1;
+		return 0;
 	}
 }

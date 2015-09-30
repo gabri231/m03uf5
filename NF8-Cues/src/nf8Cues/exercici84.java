@@ -11,18 +11,19 @@ import java.util.PriorityQueue;
  * @version 1
  * @since 29.09.2015
  *  
- *Crea un programa Java que faci el següent:
-	1. Clona dues vegades la LinkedList de l’exercici anterior. Anomena-les lifoAutos, fifoAutos 
+ *Crea un programa Java que faci el segï¿½ent:
+	1. Clona dues vegades la LinkedList de lï¿½exercici anterior. Anomena-les lifoAutos, fifoAutos 
 	
-	2. Ara crea una PriorityQueue (help aquí i aquí) amb els 6 cotxes (pots copiar qualsevol de les dues LinkedLists
-		anteriors). Mostra-la per pantalla ordenada per cilindrada, de menor a més gran.
+	2. Ara crea una PriorityQueue (help aquï¿½ i aquï¿½) amb els 6 cotxes (pots copiar qualsevol de les dues LinkedLists
+		anteriors). Mostra-la per pantalla ordenada per cilindrada, de menor a mï¿½s gran.
 	
-	3. Inserta el següent cotxe a les tres llistes: Fiat Panda 900, 2.  
+	3. Inserta el segï¿½ent cotxe a les tres llistes: Fiat Panda 900, 2.  
 	
 	4. Mostra ambdues cues per ordre: Fes un bucle que extregui el primer element de cadascuna de les tres llistes 
 		en ordre fins que no en quedi cap.
 	
-	5. Respon la següent pregunta (en un comentari al final del codi): Posa un exemple de la vida real de cadascun dels dos tipus de cues (no necessàriament quan els objectes són models de cotxes!)
+	5. Respon la segï¿½ent pregunta (en un comentari al final del codi): Posa un exemple de la vida real de cadascun dels
+	 	dos tipus de cues (no necessï¿½riament quan els objectes sï¿½n models de cotxes!)
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 public class exercici84 {
 
@@ -41,7 +42,7 @@ public class exercici84 {
 				
 		
 		//////////////////////////////////////////////////////////////////////////////////////////////
-		// 1. Clona dues vegades la LinkedList de l’exercici anterior. Anomena-les lifoAutos, fifoAutos 
+		// 1. Clona dues vegades la LinkedList de l'exercici anterior. Anomena-les lifoAutos, fifoAutos 
 		// Creamos las LinkedList para clonarlas.
 		
 		LinkedList<coche> lifoAutos = new LinkedList<coche>();
@@ -60,27 +61,81 @@ public class exercici84 {
 		//////////////////////////////////////////////////////////////////////////////////////////////
 		//2. Ara crea una PriorityQueue amb els 6 cotxes 
 		//		(pots copiar qualsevol de les dues LinkedLists anteriors). 
-		// 		Mostra-la per pantalla ordenada per cilindrada, de menor a més gran.
-		/*
-		 * PriorityQueue<clase> pq = new PriorityQueue<clase>();
-		 * 
-		PriorityQueue<Golfista> pq = new PriorityQueue<Golfista>();
-		pq.offer(tiger);
-		pq.offer(phil);
-		pq.offer(hal);
+		// 		Mostra-la per pantalla ordenada per cilindrada, de menor a mÃ©s gran.
 		
-		while (!pq.isEmpty())
-		{
-			Golfista primerLlista = pq.poll();
-			System.out.println(primerLlista.getName() + ", puntuació: " + primerLlista.getScore());
+		// Se crea la priorityQueue de la clase coche llamada cuaOrdenadaPerCilindrada. 
+		PriorityQueue<coche> cuaOrdenadaPerCilindrada = new PriorityQueue<coche>();
+		
+		// Se crea una cua auxiliar para fer proves
+		PriorityQueue<coche> cuaAux= new PriorityQueue<coche>();
+		
+		// Recorremos la lista lifoautos para aÃ±adirlo en la cua de cotxes ordenada per cilindre.
+		for(coche car : lifoAutos){
+			cuaOrdenadaPerCilindrada.offer(car);
+			cuaAux.offer(car);
 		}
-		*/
-		PriorityQueue<cuaCilindrada> cuaOrdenadaPerCilindrada = new PriorityQueue<cuaCilindrada>();
-		//cuaOrdenadaPerCilindrada.offer(null);
+		System.out.println("Lista ordenada por cilindrada.");
 		
-		//for (coche car : fifoAutos){
-			//cuaOrdenadaPerCilindrada.offer(new coche(car.getMarca(), car.getModelo(), car.getCilindrada(),car.getCilindres()));
-		//}
+		// Imprimimos els objectes de la cua.
+				
+		while (!cuaAux.isEmpty())
+		{
+			coche cilindrada = cuaAux.poll();
+			System.out.println("|"
+					+ String.format("%1$-13s",cilindrada.getMarca())
+					+ "|  "
+					+String.format("%1$-10s",cilindrada.getModelo())
+					+"| "
+					+cilindrada.getCilindrada()
+					+" | "
+					+cilindrada.getCilindres()+" |");
+		}
+		linea();
+		//////////////////////////////////////////////////////////////////////////////////////////////
+		// 3. Inserta el segent cotxe a les tres llistes: Fiat Panda 900, 2.  
+		//	("Fiat", "Panda", 900, 2)
+		//
+		// 		Listas disponibles: 'lista'. 'fifoAutos', 'lifoAutos'
+		//		aÃ±adimos el nuevo coche a las 3 listas.
+		
+		cuaOrdenadaPerCilindrada.offer(new coche("Fiat", "Panda", 900, 2));
+		fifoAutos.offer(new coche("Fiat", "Panda", 900, 2));
+		lifoAutos.offer(new coche("Fiat", "Panda", 900, 2));
+ 		
+		
+		//////////////////////////////////////////////////////////////////////////////////////////////
+		//	4. Mostra ambdues cues per ordre: Fes un bucle que extregui el primer element de cadascuna de les tres llistes 
+		// 		en ordre fins que no en quedi cap.
+		System.out.println("Se extrae el primer elemento de las 3 listas: \n");
+		
+		// Imprimimos el primer elemento, que es el que se extraera.
+		System.out.println("De la cua [[cuaOrdenadaPerCilindrada]] el primer elemento que se extrae es: " +cuaOrdenadaPerCilindrada.element().getMarca());
+		// Listamos elementos de la cola.
+		cuaOrdenadaPerCilindrada.poll();
+		System.out.print(" ");
+		while (!cuaOrdenadaPerCilindrada.isEmpty())
+		{
+			coche cilindrada = cuaOrdenadaPerCilindrada.poll();
+			System.out.print("("+ cilindrada.getMarca()+"),");
+		}
+		
+		
+		
+		
+		
+		
+		//////////////////////////////////////////////////////////////////////////////////////////////
+		// 	5. Respon la segï¿½ent pregunta (en un comentari al final del codi): Posa un exemple de la vida real de cadascun dels
+	 	// 		dos tipus de cues (no necessï¿½riament quan els objectes sï¿½n models de cotxes!)
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		//Fin de main
 	}
 	
@@ -109,25 +164,5 @@ public class exercici84 {
 	static void linea(String a){
 		System.out.println("+------------------<["+ String.format("%1$15s", a)+" ]>---------------------------------+");
 	}
-	
-	// Se define la clase cuaCilindrada
-	// Es una clase heredada de coche.
-	public static class cuaCilindrada extends coche implements Comparable<cuaCilindrada> {
-
-		public int compareTo(cuaCilindrada car) {
-			cuaCilindrada that = (cuaCilindrada) car;
-			int a = this.cilindrada;
-			int b = that.cilindrada;
-
-			// for golfers, low is good!
-			if (a > b)
-				return 1;
-			if (a < b)
-				return -1;
-			return 0;
-		}
-
-	}
-	
 	
 }

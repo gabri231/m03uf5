@@ -31,7 +31,7 @@ public class PriorityQueueTest {
 				"Susanna", "Ot", "Esmeralda" };
 		PriorityQueue<String> priorityQueueSenseRes = new PriorityQueue<String>(9);
 
-		// fem servir el mètode offer() per introduir elements a la cua
+		// fem servir el mÃ¨tode offer() per introduir elements a la cua
 		// priorityQueueSenseRes
 		for (String x : ia) {
 			priorityQueueSenseRes.offer(x);
@@ -47,17 +47,17 @@ public class PriorityQueueTest {
 
 		// tamany
 		System.out.println("tamany: " + priorityQueueAmbCriteri.size());
-		// retorn de l'element amb el criteri "més alt"
-		System.out.println("consulta (peek) element amb criteri més alt: "
+		// retorn de l'element amb el criteri "mÃ©s alt"
+		System.out.println("consulta (peek) element amb criteri mÃ©s alt: "
 				+ priorityQueueAmbCriteri.peek());
 		System.out.println("+-----------------------------------------------------------------------+");
 		// tamany
-		System.out.println("-- Extracció dels elements de la cua ordenada --");
+		System.out.println("-- ExtracciÃ³ dels elements de la cua ordenada --");
 		// return highest priority element and removes it from the queue
 		
 		while (!priorityQueueAmbCriteri.isEmpty())
 		{
-			System.out.println("extreu (poll) element amb criteri més alt  : "
+			System.out.println("extreu (poll) element amb criteri mÃ©s alt  : "
 					+ priorityQueueAmbCriteri.poll());
 			// print tamany
 			System.out.println("tamany: " + priorityQueueAmbCriteri.size());
