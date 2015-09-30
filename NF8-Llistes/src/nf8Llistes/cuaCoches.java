@@ -1,18 +1,14 @@
-package nf8Cues;
-
-public class coche {
+package nf8Llistes;
+public class cuaCoches  implements Comparable<Object>{
 	String marca, modelo;
 	int cilindrada, cilindres;
 		
 	// Constructor
-	public coche(String marca, String modelo, int cilindrada, int cilindres) {
+	public cuaCoches(String marca, String modelo, int cilindrada, int cilindres){
 		this.marca = marca;
 		this.modelo = modelo;
 		this.cilindrada = cilindrada;
 		this.cilindres = cilindres;
-	}
-	public coche() {
-
 	}
 	
 	// Set and Get
@@ -41,9 +37,16 @@ public class coche {
 		this.cilindres = cilindres;
 	}
 	
-	// Calcula potencia fiscal de coches.
 	public double pontenciaFiscal() {
 		double potencia = 0.08 * this.cilindres * Math.pow((this.cilindrada / this.cilindres), 0.6);
 		return potencia;
 	}
+
+	@Override
+	public int compareTo(Object arg0) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	
+
 }
