@@ -1,10 +1,10 @@
 package nf8Llistes;
-public class cuaCoches  implements Comparable<Object>{
+public class Coche {
 	String marca, modelo;
 	int cilindrada, cilindres;
 		
 	// Constructor
-	public cuaCoches(String marca, String modelo, int cilindrada, int cilindres){
+	public Coche(String marca, String modelo, int cilindrada, int cilindres){
 		this.marca = marca;
 		this.modelo = modelo;
 		this.cilindrada = cilindrada;
@@ -37,15 +37,9 @@ public class cuaCoches  implements Comparable<Object>{
 		this.cilindres = cilindres;
 	}
 	
-	public double pontenciaFiscal() {
+	public double potenciaFiscal() {
 		double potencia = 0.08 * this.cilindres * Math.pow((this.cilindrada / this.cilindres), 0.6);
 		return potencia;
-	}
-
-	@Override
-	public int compareTo(Object arg0) {
-		// TODO Auto-generated method stub
-		return 0;
 	}
 	
 

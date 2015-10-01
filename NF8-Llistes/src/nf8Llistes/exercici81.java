@@ -1,5 +1,5 @@
 package nf8Llistes;
-// Importación de clases necesarias
+// Importaciï¿½n de clases necesarias
 import java.util.ArrayList; 
 import java.util.ListIterator;
 
@@ -13,15 +13,15 @@ import java.util.ListIterator;
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 public class exercici81 {
 	public static void main(String[] args) {
-		// CREACIÓN OBJETO
+		// CREACIï¿½N OBJETO
 		// Se crea un objeto Integer llamado 'array' de la clase ArrayList
 		ArrayList<Integer> array = new ArrayList<Integer>();
 		
-		// Se añaden dos valores al objeto en la primera y segunda posición.
+		// Se aï¿½aden dos valores al objeto en la primera y segunda posiciï¿½n.
 		array.add(0,0);
 		array.add(1,1);
 		
-		// El atributo 'cantidad' de tipo Int, es utilizado como referencia para para determinar el tamaño del objeto 'array' de la clase ArrayList 
+		// El atributo 'cantidad' de tipo Int, es utilizado como referencia para para determinar el tamaï¿½o del objeto 'array' de la clase ArrayList 
 		int cantidad=25;
 		
 		// INTRODUCIR VALORES
@@ -56,10 +56,10 @@ public class exercici81 {
 		}
 		
 		
-		// Se imprime la posición del valor 2584
-		// El metodo para ubicar la posición de un valor es:   .indexOf(valor);
+		// Se imprime la posiciï¿½n del valor 2584
+		// El metodo para ubicar la posiciï¿½n de un valor es:   .indexOf(valor);
 		System.out.println("\n--------------------------------------------------------------------------------------------");
-		System.out.print("La posición de 2584 dentro del Arraylist es " + array.indexOf(2584));
+		System.out.print("La posiciÃ³n de 2584 dentro del Arraylist es " + array.indexOf(2584));
 		
 		
 		// Se comprueba si existe un valor
