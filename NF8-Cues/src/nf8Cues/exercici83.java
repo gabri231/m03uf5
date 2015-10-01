@@ -1,7 +1,6 @@
 package nf8Cues;
 import java.util.LinkedList;
 
-import nf8Cues.CuaOrdenada.Golfista;
 
 /** Un programa Java simple - Colas 
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
@@ -11,17 +10,17 @@ import nf8Cues.CuaOrdenada.Golfista;
  * @version 1
  * @since 28.09.2015
  *  
- * Crea un programa Java que faci el següent:
-	Creï un LinkedList que suporti 5 objectes de tipus cotxe com hem creat abans.
-	Omple’l amb els valors de la taula del costat afegint-los amb mètodes de cua.
+ * Crea un programa Java que faci el segï¿½ent:
+	Creï¿½ un LinkedList que suporti 5 objectes de tipus cotxe com hem creat abans.
+	Ompleï¿½l amb els valors de la taula del costat afegint-los amb mï¿½todes de cua.
 	Afegeix-hi dos objectes tipus cotxe
 	Hyundai Atos 1500, 3  - al principi
 	Ford Focus 2000,4 - al final
 	Pots afegir-hi duplicats?
-	Prova a inserir un “Audi A8, 4600, 8” a la posició 1. Pots?
-	Substitueix el Seat Ibiza per un “Seat Mii 1000 3”
-	Elimina el primer element de la LinkedList amb el mètode adient
-	Quina posició té el Hyundai? Busca’l.
+	Prova a inserir un ï¿½Audi A8, 4600, 8ï¿½ a la posiciï¿½ 1. Pots?
+	Substitueix el Seat Ibiza per un ï¿½Seat Mii 1000 3ï¿½
+	Elimina el primer element de la LinkedList amb el mï¿½tode adient
+	Quina posiciï¿½ tï¿½ el Hyundai? Buscaï¿½l.
 
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 public class exercici83 {
@@ -33,49 +32,51 @@ public class exercici83 {
 		// 
 		
 		// Se crea la lista.
-		LinkedList<coche> lista = new LinkedList <coche>();
+		LinkedList<Coche> lista = new LinkedList <Coche>();
 		
 		//////////////////////////////////////////////////////////////////////////////////////////////
 		// Llena los valores de la tabla con los metodos de cola.
 		//
-		lista.offer(new coche("Alfa Romero", "Giulia", 2900, 6));
-		lista.offer(new coche("Dacia", "Sandero", 1200, 4));
-		lista.offer(new coche("Ford", "Focus", 2000, 4));
-		lista.offer(new coche("Opel", "Insignia", 2200, 4));
-		lista.offer(new coche("Seat", "Ibiza", 1600, 4));
+		lista.offer(new Coche("Alfa Romero", "Giulia", 2900, 6));
+		lista.offer(new Coche("Dacia", "Sandero", 1200, 4));
+		lista.offer(new Coche("Ford", "Focus", 2000, 4));
+		lista.offer(new Coche("Opel", "Insignia", 2200, 4));
+		lista.offer(new Coche("Seat", "Ibiza", 1600, 4));
 		linea();
+		// Se imprime para comprovar sin metodo de cola.
 		ImprimirCoche(lista);
 		linea();
 		
 		//////////////////////////////////////////////////////////////////////////////////////////////
 		// Agrega dos objetos tipo coche.
 		// 
-		System.out.println("Se añaden dos elementos clase coche. ");
-		System.out.println("Se añade Hyundai Atos al principio y Ford Focus al final.");
-		// Agregamos el Hyundai Atos en la primera posición
-		lista.offerFirst(new coche("Hyundai", "Atos", 1500, 3));
-		// Agregamos el Ford Focus en la ultima posición.
-		lista.offerLast(new coche("Ford", "Focus", 2000, 4));
+		System.out.println("Se aÃ±aden dos objetos coche. ");
+		System.out.println("Se aÃ±ade Hyundai Atos al principio y Ford Focus al final.");
+		// Agregamos el Hyundai Atos en la primera posiciï¿½n
+		lista.offerFirst(new Coche("Hyundai", "Atos", 1500, 3));
+		// Agregamos el Ford Focus en la ultima posiciï¿½n.
+		lista.offerLast(new Coche("Ford", "Focus", 2000, 4));
 		
 		//////////////////////////////////////////////////////////////////////////////////////////////
-		// Se puede añadir duplicados?
+		// Se puede aÃ±adir duplicados?
 		linea();
-		System.out.println("Se pueden añadir elementos duplicados.");
+		System.out.println("Se pueden aÃ±adir elementos duplicados. Ejemplo: el Ford Focus");
 		ImprimirCoche(lista);
-		linea();	
+		linea();
 		
 		//////////////////////////////////////////////////////////////////////////////////////////////
-		// Prueba de insertar un Audi A8 en la posición 1, se puede?
+		// Prueba de insertar un Audi A8 en la posiciï¿½n 1, se puede?
 		// 
-		System.out.println("No se puede añadir Audi A8 en la posición 1, porque el metodo .offer() no lo permite.");
+		System.out.println("No se puede aÃ±adir Audi A8 en la posiciÃ³n 1, porque el metodo .offer() no lo permite.");
 		
-				
+		
+		
 		//////////////////////////////////////////////////////////////////////////////////////////////
 		// Sustituye el Seat Ibiza por un "Seat Mii 1000 3".
 		//
 		linea();
 		System.out.println("Se sustituye el Seat Ibiza por un Seat Mii. Se busca el Ibiza y se cambian valores.");
-		for (coche car : lista){
+		for (Coche car : lista){
 			// Buscamos el objecto Seat Ibiza y lo sustituimos por un Seat Mii.
 			if(car.getMarca() == "Seat" && car.getModelo() == "Ibiza"){
 				car.setMarca("Seat");
@@ -94,6 +95,7 @@ public class exercici83 {
 		//
 		linea();
 		// Se elimia el primer elemento de la lista.
+		System.out.println("El primer elemento: "+lista.element().getMarca());
 		lista.pollFirst();
 		System.out.println("Se elimina el primer elemento de la LinkedList.");
 		linea();
@@ -105,26 +107,28 @@ public class exercici83 {
 		
 		/////////////////////////////////////////////////////////////////////////////////////////////
 		/////////////////////////////////////////////////////////////////////////////////////////////
-		// Quina posició té el Hyundai? Busca’l.
+		// Quina posiciï¿½ tï¿½ el Hyundai? Buscaï¿½l.
 		//		
 		System.out.println("Se ubica las posiciones del coche: \"Hyundai Atos\" y se imprimen.");
-		int contador=0;
 		
-		// Se define 'comprobador' de tipo boolean para más adelante utilizarlo en caso de encontrar un coche.
+		
+		// Se utiliza contador para determinar la posiciÃ³n de un coche en caso de encontrarlo.
+		int contador=0;
+		// Se define 'comprobador' de tipo boolean para mï¿½s adelante utilizarlo en caso de encontrar un coche.
 		boolean comprobador=false;
 		// Se recorre toda la lista en busca del Hyundai Atos. 
-		for (coche car : lista){
+		for (Coche car : lista){
 			// Si encuentra el Huyndai Atos, imprime resultado y rompe el bucle para optimizar la aplicacion.
 			if(car.getMarca() == "Hyundai" && car.getModelo() == "Atos"){
-				System.out.println("--> Se ha encontrado un Hyundai Atos en la posición de cola: " + contador);
+				System.out.println("--> Se ha encontrado un Hyundai Atos en la posiciÃ³n de cola: " + contador);
 				// Se establece el comprobador como true debido a que ha encontrado el Hyundai.
 				comprobador = true;
 			}
 			contador++;
 		}
-		// Se comprueba si es que se ha encontrado un coche. Si es falso, es que no se ha encontrado e imprime negación.
+		// Se comprueba si es que se ha encontrado un coche. Si es falso, es que no se ha encontrado e imprime negaciï¿½n.
 		if(!comprobador){
-			System.out.println("--> No se ha encontrado ningún Hyundai Atos.");
+			System.out.println("--> No se ha encontrado ningÃºn Hyundai Atos.");
 		}
 		
 		
@@ -134,9 +138,9 @@ public class exercici83 {
 		linea();
 		while (!lista.isEmpty())
 		{
-			// Se recoge el tamaño de la lista para ir imprimiendolo y viendo que con el metodo .poll(); La lista se va reduciendo.
+			// Se recoge el tamaï¿½o de la lista para ir imprimiendolo y viendo que con el metodo .poll(); La lista se va reduciendo.
 			int cantLista = lista.size();
-			coche car = lista.poll();
+			Coche car = lista.poll();
 			System.out.println("|"
 					+ String.format("%1$-13s",car.getMarca())
 					+ "|  "
@@ -147,16 +151,17 @@ public class exercici83 {
 					+car.getCilindres()
 					+"\t|   "
 					+ car.pontenciaFiscal()+"\t|"
-					+ "Tamaño lista: " + cantLista);
+					+ "TamaÃ±o lista: " + cantLista);
+			
 		}
 		linea();	
 		
 	}
 	
 	//Fin de main	
-	static void ImprimirCoche(LinkedList<coche> lista){
+	static void ImprimirCoche(LinkedList<Coche> lista){
 		int contador = 0;
-		for (coche car : lista){
+		for (Coche car : lista){
 			System.out.println("|"
 					+ contador+"| "
 					+ String.format("%1$-13s",car.getMarca())

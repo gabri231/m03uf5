@@ -1,17 +1,17 @@
 package nf8Cues;
 
-public class coche implements Comparable<Object>  {
+public class Coche implements Comparable<Object>  {
 	String marca, modelo;
 	int cilindrada, cilindres;
 		
 	// Constructor
-	public coche(String marca, String modelo, int cilindrada, int cilindres) {
+	public Coche(String marca, String modelo, int cilindrada, int cilindres) {
 		this.marca = marca;
 		this.modelo = modelo;
 		this.cilindrada = cilindrada;
 		this.cilindres = cilindres;
 	}
-	public coche() {
+	public Coche() {
 
 	}
 	
@@ -49,7 +49,7 @@ public class coche implements Comparable<Object>  {
 	
 	// CompareTo Para organizarlos por cilindrada. 
 	public int compareTo(Object car) {
-		coche that = (coche) car;
+		Coche that = (Coche) car;
 		int a = this.getCilindrada();
 		int b = that.getCilindrada();
 
