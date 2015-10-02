@@ -108,8 +108,13 @@ public static void main(String[] args) {
 		
 		linea();
 		System.out.println("Se sustituye el Seat Ibiza por un Seat Mii.");
-		hashDeCoches.remove(ibiza);
-		hashDeCoches.add(new Coche ("Seat", "Mi", 123,12));
+		
+		// condicion
+		
+		if (hashDeCoches.remove(ibiza)){
+			hashDeCoches.add(new Coche ("Seat", "Mi", 123,12));		
+		}
+		
 		ImprimirCoches(hashDeCoches);		
 		
 		
