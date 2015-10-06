@@ -110,7 +110,7 @@ public static void main(String[] args) {
 		System.out.println("Se sustituye el Seat Ibiza por un Seat Mii.");
 		
 		// condicion
-		
+				
 		if (hashDeCoches.remove(ibiza)){
 			hashDeCoches.add(new Coche ("Seat", "Mi", 123,12));		
 		}
