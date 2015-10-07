@@ -1,7 +1,7 @@
 package nf8Conjunts;
 
 import java.util.Map;
-import java.util.SortedMap;
+//import java.util.SortedMap;
 import java.util.TreeMap;
 
 /** Un programa Java simple - Colas 
@@ -28,7 +28,7 @@ public static void main(String[] args) {
 		// 1. Creï un HashSet que suporti 5 objectes de tipus cotxe com hem creat abans.
 		//ok
 		// Se crea la lista.
-		SortedMap<String, Coche> mapDeCoches = new TreeMap<String, Coche>();
+		Map<String, Coche> mapDeCoches = new TreeMap<String, Coche>();
 		
 		//////////////////////////////////////////////////////////////////////////////////////////////
 		// 2. Omple’l amb els valors de la taula del costat
@@ -70,7 +70,6 @@ public static void main(String[] args) {
 					+" | "
 					+ String.format("%1$-5s",String.format("%.2f", car.getValue().pontenciaFiscal()))+"|");
 		}
-
 	}
 	
 	//Fin de main	

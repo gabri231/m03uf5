@@ -1,6 +1,6 @@
 package nf8Conjunts;
 
-public class Coche implements Comparable<Object>  {
+public class Coche{
 	String marca, modelo;
 	int cilindrada, cilindres;
 		
@@ -10,9 +10,6 @@ public class Coche implements Comparable<Object>  {
 		this.modelo = modelo;
 		this.cilindrada = cilindrada;
 		this.cilindres = cilindres;
-	}
-	public Coche() {
-
 	}
 	
 	// Set and Get
@@ -46,59 +43,5 @@ public class Coche implements Comparable<Object>  {
 		double potencia = 0.08 * this.cilindres * Math.pow((this.cilindrada / this.cilindres), 0.6);
 		return potencia;
 	}
-	
-	// CompareTo Para organizarlos por cilindrada. 
-	public int compareTo(Object car) {
-		Coche that = (Coche) car;
-		int a = this.getCilindrada();
-		int b = that.getCilindrada();
 
-		// for golfers, low is good!
-		if (a > b)
-			return 1;
-		if (a < b)
-			return -1;
-		return 0;
-	}
-	
-	
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + cilindrada;
-		result = prime * result + cilindres;
-		result = prime * result + ((marca == null) ? 0 : marca.hashCode());
-		result = prime * result + ((modelo == null) ? 0 : modelo.hashCode());
-		return result;
-	}
-	
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Coche other = (Coche) obj;
-		if (cilindrada != other.cilindrada)
-			return false;
-		if (cilindres != other.cilindres)
-			return false;
-		if (marca == null) {
-			if (other.marca != null)
-				return false;
-		} else if (!marca.equals(other.marca))
-			return false;
-		if (modelo == null) {
-			if (other.modelo != null)
-				return false;
-		} else if (!modelo.equals(other.modelo))
-			return false;
-		return true;
-	}
-
-	
-	
 }
