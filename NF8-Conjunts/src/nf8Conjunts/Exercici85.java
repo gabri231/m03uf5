@@ -57,7 +57,7 @@ public static void main(String[] args) {
 		// 3. Quina potència fiscal té Dacia Sandero? Busca’l com objecte.
 		linea();
 		if (hashDeCoches.contains(dacia)){
-			System.out.println("La potencia fiscal que tiene el Dacia Sandero es: "	+ String.format("%.2f",dacia.pontenciaFiscal()));
+			System.out.println("La potencia fiscal que tiene el Dacia Sandero es: "	+ String.format("%.2f",dacia.potenciaFiscal()));
 		}
 		else{
 			System.out.println("No se ha encontradro el Dacia Sandero.");
@@ -136,7 +136,7 @@ public static void main(String[] args) {
 					+"\t|   "
 					+car.getCilindres()
 					+"\t|   "
-					+ String.format("%.2f", car.pontenciaFiscal())+"\t|");
+					+ String.format("%.2f", car.potenciaFiscal())+"\t|");
 		}	
 
 
@@ -156,7 +156,7 @@ public static void main(String[] args) {
 					+"\t|   "
 					+car.getCilindres()
 					+"\t|   "
-					+ String.format("%.2f", car.pontenciaFiscal())+"\t|");
+					+ String.format("%.2f", car.potenciaFiscal())+"\t|");
 		}
 		System.out.println("+---------------------------------------------------------------+");
 	}

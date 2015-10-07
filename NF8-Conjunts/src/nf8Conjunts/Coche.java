@@ -1,6 +1,6 @@
 package nf8Conjunts;
 
-public class Coche implements Comparable<Object>  {
+public class Coche {
 	String marca, modelo;
 	int cilindrada, cilindres;
 		
@@ -11,9 +11,7 @@ public class Coche implements Comparable<Object>  {
 		this.cilindrada = cilindrada;
 		this.cilindres = cilindres;
 	}
-	public Coche() {
 
-	}
 	
 	// Set and Get
 	public String getMarca() {
@@ -42,24 +40,11 @@ public class Coche implements Comparable<Object>  {
 	}
 	
 	// Calcula potencia fiscal de coches.
-	public double pontenciaFiscal() {
+	public double potenciaFiscal() {
 		double potencia = 0.08 * this.cilindres * Math.pow((this.cilindrada / this.cilindres), 0.6);
 		return potencia;
 	}
 	
-	// CompareTo Para organizarlos por cilindrada. 
-	public int compareTo(Object car) {
-		Coche that = (Coche) car;
-		int a = this.getCilindrada();
-		int b = that.getCilindrada();
-
-		// for golfers, low is good!
-		if (a > b)
-			return 1;
-		if (a < b)
-			return -1;
-		return 0;
-	}
 	
 	
 	@Override

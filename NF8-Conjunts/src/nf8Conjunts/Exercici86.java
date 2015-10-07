@@ -34,10 +34,7 @@ public static void main(String[] args) {
 		linkedHashDeCoches.add(new Coche("Ford", "Focus", 2000, 4));
 		linkedHashDeCoches.add(new Coche("Opel", "Insignia", 2200, 4));
 		linkedHashDeCoches.add(new Coche("Seat", "Ibiza", 1600, 4));
-		ImprimirCoches(linkedHashDeCoches);
-
-
-
+		
 		//////////////////////////////////////////////////////////////////////////////////////////////
 		// 	2. Afegeix-hi dos objectes tipus cotxe:
 		//		a. Hyundai Atos 1500, 3 
@@ -48,17 +45,17 @@ public static void main(String[] args) {
 		Boolean intento;
 		intento = linkedHashDeCoches.add(new Coche("Hyundai", "Atos", 1500, 3));
 		if (intento){
-			System.out.println("Éxito al insertar el Hyundai ");
+			System.out.println("Ok: Éxito al insertar el Hyundai ");
 		}
 		else{
-			System.out.println("Fracaso al insertar el Hyundai, porque ya existe.");
+			System.out.println("ERROR: Fracaso al insertar el Hyundai, porque ya existe.");
 		}
 		intento = linkedHashDeCoches.add(new Coche("Ford", "Focus", 2000, 4));
 		if (intento){
-			System.out.println("Éxito al insertar el Ford Focus ");
+			System.out.println("Ok: Éxito al insertar el Ford Focus ");
 		}
 		else{
-			System.out.println("Fracaso al insertar el Ford Focus, porque ya existe");
+			System.out.println("ERROR: Fracaso al insertar el Ford Focus, porque ya existe");
 		}
 		
 		
@@ -66,19 +63,10 @@ public static void main(String[] args) {
 		// 	3. Pots afegir-hi duplicats? 
 		linea();
 		System.out.println("No se pueden añadir elementos duplicados.");
-		ImprimirCoches(linkedHashDeCoches);
+
 
 		// 	4. Obté les dades de tots els objectes amb qualsevol mètode
-		
-		//  5. Quin ordre hi tenim? Quin tipus de “cua” és?
-		
-		
-	}
-	
-	//Fin de main	
-	static void ImprimirCoches(LinkedHashSet<Coche> lista){
-		System.out.println("+---------------------------------------------------------------+");
-		for (Coche car : lista){
+		for (Coche car : linkedHashDeCoches){
 			System.out.println("|"
 					+ String.format("%1$-13s",car.getMarca())
 					+ "|  "
@@ -88,10 +76,17 @@ public static void main(String[] args) {
 					+"\t|   "
 					+car.getCilindres()
 					+"\t|   "
-					+ String.format("%.2f", car.pontenciaFiscal())+"\t|");
+					+ String.format("%.2f", car.potenciaFiscal())+"\t|");
 		}
-		System.out.println("+---------------------------------------------------------------+");
+		
+		//  5. Quin ordre hi tenim? Quin tipus de “cua” és?
+		linea();
+		System.out.println("Estan por orden de llegada. El tipo de cola es: FIFO.");
+		
+		
 	}
+	
+	//Fin de main	
 	static void linea(){
 		System.out.println("#########################################################################");
 	}
