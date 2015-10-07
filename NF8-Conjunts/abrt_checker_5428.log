@@ -1,0 +1,4 @@
+Uncaught java.lang.Error exception in thread "main" in a method nf8Conjunts.Exercici87.main() with signature ([Ljava/lang/String;)V
+Exception in thread "main" java.lang.Error: Unresolved compilation problem: 
+
+	at nf8Conjunts.Exercici87.main(Exercici87.java:24) [file:/home/users/inf/wiaw2/iaw26567249/git/m03/NF8-Conjunts/bin/nf8Conjunts/Exercici87.class]
