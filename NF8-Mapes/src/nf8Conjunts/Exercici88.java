@@ -67,7 +67,7 @@ public class Exercici88 {
 				+" | "
 				+car.getValue().getCilindres()
 				+" | "
-				+ String.format("%1$-5s",String.format("%.2f", car.getValue().pontenciaFiscal()))+"|");
+				+ String.format("%1$-5s",String.format("%.2f", car.getValue().potenciaFiscal()))+"|");
 		}
 	}
 

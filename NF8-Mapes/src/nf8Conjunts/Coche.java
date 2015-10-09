@@ -39,9 +39,17 @@ public class Coche{
 	}
 	
 	// Calcula potencia fiscal de coches.
-	public double pontenciaFiscal() {
+	public double potenciaFiscal() {
 		double potencia = 0.08 * this.cilindres * Math.pow((this.cilindrada / this.cilindres), 0.6);
 		return potencia;
 	}
+
+	@Override
+	public String toString() {
+		return "Coche [marca=" + marca + ", modelo=" + modelo + ", cilindrada=" + cilindrada + ", cilindres="
+				+ cilindres + ", pontenciaFiscal()=" + potenciaFiscal() + "]";
+	}
+	
+	
 
 }
