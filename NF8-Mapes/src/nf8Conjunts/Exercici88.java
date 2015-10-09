@@ -1,7 +1,6 @@
 package nf8Conjunts;
 
 import java.util.Map;
-//import java.util.SortedMap;
 import java.util.TreeMap;
 
 /** Un programa Java simple - Colas 
@@ -22,8 +21,8 @@ import java.util.TreeMap;
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 public class Exercici88 {
 
-public static void main(String[] args) {
-		
+	public static void main(String[] args) {
+			
 		//////////////////////////////////////////////////////////////////////////////////////////////
 		// 1. Creï un HashSet que suporti 5 objectes de tipus cotxe com hem creat abans.
 		//ok
@@ -40,7 +39,6 @@ public static void main(String[] args) {
 		mapDeCoches.put("4321 JKL", new Coche("Opel", "Insignia", 2200, 4));
 		mapDeCoches.put("2233 MNO", new Coche("Seat", "Ibiza", 1600, 4));
 		
-		
 		//////////////////////////////////////////////////////////////////////////////////////////////
 		// 3. Pots afegir-hi duplicats? Com?
 		linea();
@@ -55,25 +53,26 @@ public static void main(String[] args) {
 		}
 		linea();
 		//////////////////////////////////////////////////////////////////////////////////////////////
-		// Recorrer el mapa
+		// 4. Obté les dades de tots els objectes
+		//	a. amb qualsevol mètode
 		for (Map.Entry<String, Coche> car : mapDeCoches.entrySet()){
 			System.out.println("|"
-					+ String.format("%1$-8s",car.getKey())
-					+ "| "
-					+String.format("%1$-12s",car.getValue().getMarca())
-					+" | "
-					+String.format("%1$-8s",car.getValue().getModelo())
-					+" | "
-					+car.getValue().getCilindrada()
-					+" | "
-					+car.getValue().getCilindres()
-					+" | "
-					+ String.format("%1$-5s",String.format("%.2f", car.getValue().pontenciaFiscal()))+"|");
+				+ String.format("%1$-8s",car.getKey())
+				+ "| "
+				+String.format("%1$-12s",car.getValue().getMarca())
+				+" | "
+				+String.format("%1$-8s",car.getValue().getModelo())
+				+" | "
+				+car.getValue().getCilindrada()
+				+" | "
+				+car.getValue().getCilindres()
+				+" | "
+				+ String.format("%1$-5s",String.format("%.2f", car.getValue().pontenciaFiscal()))+"|");
 		}
 	}
-	
+
 	//Fin de main	
-		static void linea(){
-		System.out.println("#########################################################################");
+	static void linea(){
+	System.out.println("#########################################################################");
 	}
 }
