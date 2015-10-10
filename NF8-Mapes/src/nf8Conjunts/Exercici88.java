@@ -34,8 +34,8 @@ public class Exercici88 {
 		//ok
 	
 		mapDeCoches.put("1234 ABC", new Coche("Alfa Romero", "Giulia", 2900, 6));
-		mapDeCoches.put("4566 DEF", new Coche("Dacia", "Sandero", 1200, 4));
-		mapDeCoches.put("1122 GHI", new Coche("Ford", "Focus", 2000, 4));
+		mapDeCoches.put("3566 DEF", new Coche("Dacia", "Sandero", 1200, 4));
+		mapDeCoches.put("5122 GHI", new Coche("Ford", "Focus", 2000, 4));
 		mapDeCoches.put("4321 JKL", new Coche("Opel", "Insignia", 2200, 4));
 		mapDeCoches.put("2233 MNO", new Coche("Seat", "Ibiza", 1600, 4));
 		
