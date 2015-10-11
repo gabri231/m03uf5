@@ -2,8 +2,10 @@ package nf8Conjunts;
 
 import java.util.ArrayList;
 import java.util.Map;
+import java.util.PriorityQueue;
 import java.util.TreeMap;
-import java.util.TreeSet;
+
+import javax.swing.SingleSelectionModel;
 
 /** Un programa Java simple - Colas 
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
@@ -40,7 +42,7 @@ public class Exercici89 {
 				arrayMatriculas.add(coche.getKey());
 				// Imprimimos los datos de los pares a borrar.
 				System.out.print("Ha sido eliminado->");
-				imprimirCuerpo(coche);
+				imprimirValueMap(coche);
 			}
 		}
 		// REcorremos el mapa en caso de que contenga pares.
@@ -78,11 +80,12 @@ public class Exercici89 {
 	  			}
 	  		}
 	  		// Comprobamos que el array haya encontrado alguna coincidencia. Si está vacio devolvemos null.
-	  		if (!arrayRetorno.isEmpty()){
+	  		if (arrayRetorno.isEmpty()){
 		  		// Una vez que se terminamos de recorrer el map de coches, devolvemos los resultados en formato arrayList.	
-	  			return arrayRetorno;	
+	  			return null;	
+	  		}else{
+	  			return arrayRetorno;
 	  		}
-	  		return null;
   		}else{
   			// Si es que el mapa está vacio devuelve null.
   			return null;
@@ -91,57 +94,33 @@ public class Exercici89 {
   	
 	//////////////////////////////////////////////////////////////////////////////////////////////
 	/////////////////////////////////////////////////////////////////////////////////////////////
-  	
-  	public static ArrayList<Coche> mapDeCochesPorMarca(Map<String, Coche> mapDeCoches){
-  		TreeMap<String, Coche> tmDeCoches = new TreeMap<String, Coche>();
-  		tmDeCoches.putAll(mapDeCoches);
-  		
-  		for (Map.Entry<String, Coche> coche : tmDeCoches.entrySet()){
-  			System.out.println(coche);
-  		}
-  		
-  		
-  		ArrayList<Coche> tsCocheOrdenadoMarca=new ArrayList<Coche>();
-  		if (!tmDeCoches.isEmpty()){
-	  		for (Map.Entry<String, Coche> coche : tmDeCoches.entrySet()){
-	  			System.out.println("Estas dentro" + coche.getValue());
-	  			tsCocheOrdenadoMarca.add(coche.getValue());
+  	// 3. un mètode que retorni els noms dels cotxes agrupats per marques (amb un ArrayList de cotxes ja fem).
+
+  	public static Map<String, ArrayList<Coche>> mapCochesPorMarca(Map<String, Coche> mapDeCoches){
+  		if (!mapDeCoches.isEmpty()){
+	  		ArrayList<String> arrayMarca = new ArrayList<String>();
+	  		for (Map.Entry<String, Coche> coche : mapDeCoches.entrySet() ){
+	  			Coche marca = coche.getValue();
+	  			if (!arrayMarca.contains(marca.getMarca())){
+	  				arrayMarca.add(marca.getMarca());
+	  			}
 	  		}
-	  		// Comprobamos que el array haya encontrado alguna coincidencia. Si está vacio devolvemos null.
-	  		if (!tsCocheOrdenadoMarca.isEmpty()){
-		  		// Una vez que se terminamos de recorrer el map de coches, devolvemos los resultados en formato arrayList.	
-	  			return tsCocheOrdenadoMarca;	
+	  		Map<String, ArrayList<Coche>> mapDeCochesOrdPorMarca = new TreeMap<String, ArrayList<Coche>>();
+	  		for (int i=0; i<arrayMarca.size() ; i++){
+	  			String marca = arrayMarca.get(i);
+	  			ArrayList<Coche> arrayCoche = new ArrayList<Coche>();
+				for (Map.Entry<String, Coche> coche : mapDeCoches.entrySet() ){
+					if (coche.getValue().getMarca() == marca){
+						arrayCoche.add(coche.getValue());
+					}
+				}
+				mapDeCochesOrdPorMarca.put(marca, arrayCoche);
 	  		}
-	  		return null;
+	  		return mapDeCochesOrdPorMarca;
   		}else{
-  			// Si es que el mapa está vacio devuelve null.
   			return null;
   		}
   	}
-  	
-  	
-  	
-  	
-  	
-  	
-	//  	public static TreeSet<Coche> mapDeCochesPorMarcas(Map<String, Coche> mapDeCoches){
-	//  		TreeSet<Coche> tsCocheOrdenadoMarca=new TreeSet<Coche>();
-	//  		if (!mapDeCoches.isEmpty()){
-	//	  		for (Map.Entry<String, Coche> coche : mapDeCoches.entrySet()){
-	//	  			System.out.println("Estas dentro" + coche.getValue());
-	//	  			tsCocheOrdenadoMarca.add(coche.getValue());
-	//	  		}
-	//	  		// Comprobamos que el array haya encontrado alguna coincidencia. Si está vacio devolvemos null.
-	//	  		if (!tsCocheOrdenadoMarca.isEmpty()){
-	//		  		// Una vez que se terminamos de recorrer el map de coches, devolvemos los resultados en formato arrayList.	
-	//	  			return tsCocheOrdenadoMarca;	
-	//	  		}
-	//	  		return null;
-	//  		}else{
-	//  			// Si es que el mapa está vacio devuelve null.
-	//  			return null;
-	//  		}
-	//  	}
   	
 	public static void main(String[] args) {
 	  	//////////////////////////////////////////////////////////////////////////////////////////////
@@ -153,11 +132,15 @@ public class Exercici89 {
 		mapaDeCoches.put("8232 AFA", new Coche("Ford", "Focus", 2000, 4));
 		mapaDeCoches.put("3311 FFF", new Coche("Opel", "Insignia", 2200, 4));
 		mapaDeCoches.put("2311 OPE", new Coche("Opel", "Astra", 1600, 4));
+		mapaDeCoches.put("7311 WPE", new Coche("Opel", "Vectra", 2000, 4));
 		mapaDeCoches.put("9381 LEL", new Coche("Seat", "Ibiza", 1200, 3));
+		mapaDeCoches.put("6254 TAD", new Coche("Seat", "Toledo", 1800, 4));
 		mapaDeCoches.put("2485 AHL", new Coche("BMW", "525D", 3000, 6));
+		mapaDeCoches.put("8541 ALG", new Coche("BMW", "320", 2500, 8));
 		mapaDeCoches.put("6382 ALL", new Coche("Mercedes", "270DCI", 2700, 5));
 		mapaDeCoches.put("7384 MLG", new Coche("Mercedes", "280SEL", 3500, 8));
-		imprimirCoches(mapaDeCoches);
+		System.out.println("Mapa inicial.");
+		imprimirMapa(mapaDeCoches);
 		
 	  	//////////////////////////////////////////////////////////////////////////////////////////////
 		//////////////////////////////////////////////////////////////////////////////////////////////
@@ -172,7 +155,7 @@ public class Exercici89 {
 		// Se comprueba qué coches se han borrado.
 		linea();
 		System.out.println("Resultado después del borrado de coches mayores a: "+cilindrada+" CC.");
-		imprimirCoches(mapaDeCoches);
+		imprimirMapa(mapaDeCoches);
 
 	  	//////////////////////////////////////////////////////////////////////////////////////////////
 		//////////////////////////////////////////////////////////////////////////////////////////////
@@ -182,35 +165,24 @@ public class Exercici89 {
 		// Se crea el arrayList para recibir los datos después de pasarlos por nuestro metodo.
 		ArrayList<Coche> arrayDeCochesPorCilindro = new ArrayList<Coche>();
 		// Guardamos en nuestro arrayList el resultado de los cilindros 
-		arrayDeCochesPorCilindro = mapDeCochesPorCilindro(4,mapaDeCoches);
+		int cilindros = 4;
+		arrayDeCochesPorCilindro = mapDeCochesPorCilindro(cilindros,mapaDeCoches);
 		//System.out.println(arrayDeCochesPorCilindro.getClass().getName());
-		System.out.println("Se imprime el array con los resultados de los coches con x números de cilindros.");
-		for (Coche coche: arrayDeCochesPorCilindro){
-			imprimirCuerpoArray(coche);
-		}
+		System.out.println("Se imprime el array con los resultados de los coches con "+ cilindros +" cilindros.");
+		imprimirArray(arrayDeCochesPorCilindro);
 		
 	  	//////////////////////////////////////////////////////////////////////////////////////////////
 	  	//////////////////////////////////////////////////////////////////////////////////////////////
 		// 3. un mètode que retorni els noms dels cotxes agrupats per marques (amb un ArrayList de cotxes ja fem). 
 		separador();
-		ArrayList<Coche> arrayCocheOrdenadoMarca=new ArrayList<Coche>();
-		arrayCocheOrdenadoMarca=mapDeCochesPorMarca(mapaDeCoches);
-		
-		//System.out.println(mapDeCochesPorMarca(mapaDeCoches).getClass().getName());
-		
-		
-		if (!arrayCocheOrdenadoMarca.isEmpty()){
-			for (Coche coche : arrayCocheOrdenadoMarca){
-				System.out.println(coche);
-			}
+		Map<String, ArrayList<Coche>> mapDeCochesOrdMarca = new TreeMap<String, ArrayList<Coche>>();
+		mapDeCochesOrdMarca = mapCochesPorMarca(mapaDeCoches);
+		if (!mapDeCochesOrdMarca.isEmpty()){
+			System.out.println("Se imprime el map con los coches agrupados por marca.");
+			imprimirMapStrArray(mapDeCochesOrdMarca);
 		}else{
-			System.out.println("La ts esta vacia");
+			System.out.println("El map esta vacio");
 		}
-		
-		//Map<String, ArrayList<Coche>> marcasDeCoches = new TreeMap<String,  ArrayList<Coche>>();
-	
-		
-	
 	}
 	//Fin de main
 	static void separador(){
@@ -219,7 +191,7 @@ public class Exercici89 {
 	static void linea(){
 		System.out.println("-------------------------------------------------------------------------");
 	}
-	static void imprimirCoches(Map<String, Coche> mapaDeCoches){
+	static void imprimirMapa(Map<String, Coche> mapaDeCoches){
 		for (Map.Entry<String, Coche> car : mapaDeCoches.entrySet()){
 			System.out.println("|"
 				+ String.format("%1$-8s",car.getKey())
@@ -235,7 +207,7 @@ public class Exercici89 {
 				+ String.format("%1$-5s",String.format("%.2f", car.getValue().potenciaFiscal()))+"|");
 		}
 	}
-	static void imprimirCuerpo(Map.Entry<String, Coche> coche){
+	static void imprimirValueMap(Map.Entry<String, Coche> coche){
 		System.out.println("|"
 				+ String.format("%1$-8s",coche.getKey())
 				+ "| "
@@ -249,16 +221,40 @@ public class Exercici89 {
 				+" | "
 				+ String.format("%1$-5s",String.format("%.2f", coche.getValue().potenciaFiscal()))+"|");
 	}
-	static void imprimirCuerpoArray(Coche coche){
-		System.out.println("|"
-				+String.format("%1$-10s",coche.getMarca())
-				+" | "
-				+String.format("%1$-8s",coche.getModelo())
-				+" | "
-				+coche.getCilindrada()
-				+" | "
-				+coche.getCilindres()
-				+" | "
-				+ String.format("%1$-5s",String.format("%.2f", coche.potenciaFiscal()))+"|");
+	
+	static void imprimirArray(ArrayList<Coche> array){
+		for ( Coche coche : array){
+			System.out.println("\t|"
+					+String.format("%1$-10s",coche.getMarca())
+					+" | "
+					+String.format("%1$-8s",coche.getModelo())
+					+" | "
+					+coche.getCilindrada() + " cc"
+					+" | "
+					+coche.getCilindres()
+					+" | "
+					+ String.format("%1$-5s",String.format("%.2f", coche.potenciaFiscal()))+"|");
+		}
+	}
+	
+	static void imprimirMapStrArray(Map<String, ArrayList<Coche>> map){
+		for (Map.Entry<String, ArrayList<Coche>> marcaCoche: map.entrySet()){
+			System.out.println("Marca de coche: [" + marcaCoche.getKey()+"]");
+			System.out.println("\t--------------------------------------------------------");
+			System.out.println("\t|   Marca  | Modelo   | CC     | NºCilindros | CVFiscal|");
+			for ( Coche coche : marcaCoche.getValue()){
+				System.out.println("\t+ "
+						+String.format("%1$-8s",coche.getMarca())
+						+" | "
+						+String.format("%1$-8s",coche.getModelo())
+						+" | "
+						+coche.getCilindrada() + "cc"
+						+" | "
+						+coche.getCilindres() +" Cilindros"
+						+" | "
+						+ String.format("%1$-5s",String.format("%.2f", coche.potenciaFiscal()))+"CF |");
+			}
+			System.out.println("\t--------------------------------------------------------");
+		}
 	}
 }

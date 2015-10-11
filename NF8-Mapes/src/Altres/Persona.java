@@ -1,4 +1,4 @@
-package nf8Conjunts;
+package Altres;
 import java.util.SortedMap;
 import java.util.TreeMap;
 public class Persona {
@@ -23,12 +23,5 @@ public class Persona {
     			+ " \nAgenda:\n" + agendatel.toString().replaceAll(",","\n");
     }
  
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {   return false;  }
-        if (getClass() != obj.getClass()) {  return false;   }
-        final Persona other = (Persona) obj;
-        if (this.idPersona != other.idPersona) {  return false;    }
-        return true;
-    }
+
 }

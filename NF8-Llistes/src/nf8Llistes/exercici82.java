@@ -28,7 +28,7 @@ public class exercici82 {
 		//////////////////////////////////////////////////////////////////////////////////////////////
 		//Quina pot�ncia fiscal t� el cotxe a la posici� 2?
 		// En este caso utilizamos el metodo .get(posicion), en la impresi�n siguiente accedemos directamente a calcular la potencia fiscal del coche en la posici�n 2
-		System.out.println("La potencia fiscal del coche en la posición 2 es : "+String.format("%.2f",array.get(2).potenciaFiscal()));
+		System.out.println("La potencia fiscal del coche en la posici�n 2 es : "+String.format("%.2f",array.get(2).potenciaFiscal()));
 		System.out.println("El coche es un "+array.get(2).marca+" "+array.get(2).modelo);
 		InsertarSeparador();
 		
@@ -40,13 +40,13 @@ public class exercici82 {
 		array.add(focus);
 		// Se imprime el array para comprobar los valores despues de a�adir los dos objetos tipo coche anteriores.
 		ImprimirCoches(array);
-		System.out.println(" --> Sí se puede añadir duplicados.");
+		System.out.println(" --> S� se puede a�adir duplicados.");
 		InsertarSeparador();
 		
 		
 		//////////////////////////////////////////////////////////////////////////////////////////////
 		// AGREGAR UN OBJETO TIPO COCHE EN LA POSICI�N 1
-		System.out.println("Se añade el objeto tipo coche \"Audi A8\" en la posición 1.");
+		System.out.println("Se a�ade el objeto tipo coche \"Audi A8\" en la posici�n 1.");
 		
 		// Se a�ade Audi A8 en la posici�n 1
 		array.add(1,new Coche("Audi", "A8", 4600, 8));
@@ -59,12 +59,12 @@ public class exercici82 {
 		// Cuando se encuentra el objeto Audi A8, el atributo 'encontrado' se estable en true i se rompe la condici�n del bucle FOR.
 		for (int i = 0; i < array.size() && encontrado==false; i++) {
 			if(array.get(i).getMarca() == "Audi" && array.get(i).getModelo() == "A8"){
-				// Se comprueba si Audi A8 est� en la posici�n 1 para imprimir la confirmaci�n o negaci�n
+				// Se comprueba si Audi A8 est� en la posici�n 1 para imprimir la confirmaci�n
 				if (i == 1){
-					System.out.println("Audi A8 esta en la posición 1.");
+					System.out.println("Audi A8 esta en la posici�n 1.");
 				}
 				else{
-					System.out.println("Audi A8 no está en la posición 1.");
+					System.out.println("Audi A8 no est� en la posici�n 1.");
 				}
 				// Una vez que se ha encontrado el objeto Audi A8, se termina la busqueda para optimizar el proceso.
 				encontrado = true;
@@ -74,7 +74,7 @@ public class exercici82 {
 		InsertarSeparador();
 		
 		/////////////////////////////////////////////////////////////////////////////////////////////
-		// Substitueix el Seat Ibiza per un �Seat Mii 1000 3�
+		// Substitueix el Seat Ibiza per un Seat Mii 1000 3
 		// 
 		
 		encontrado = false;
@@ -101,8 +101,8 @@ public class exercici82 {
 		System.out.println("Se ubica las posiciones del coche: \"Ford Focus\" y se imprimen.");
 		for (int i = 0; i < array.size(); i++) {
 			if(array.get(i) == focus ){
-				// Se comprueba si Audi A8 est� en la posici�n 1 para imprimir la confirmaci�n o negaci�n
-				System.out.println("Se ha encontrado un Ford Focus en la posición: " + i);
+				// Se comprueba si Audi A8 est� en la posici� 1 para imprimir la confirmaci�n
+				System.out.println("Se ha encontrado un Ford Focus en la posici�n: " + i);
 			}
 		}
 		
@@ -112,7 +112,7 @@ public class exercici82 {
 		/////////////////////////////////////////////////////////////////////////////////////////////
 		// 
 		//		Imprimeix les dades de tots els objectes, incloent la pot. fiscal:
-		//			a. Un bucle �normal� fins al tamany.
+		//			a. Un bucle normal fins al tamany.
 		//			b. For-each
 		//			c. Amb Iterator
 		// Se declara el contador para contar el total de coches que se usa al imprimir el ArrayList
@@ -203,7 +203,7 @@ public class exercici82 {
 	}
 	static void InsertarCabecera(String a){
 		System.out.println("+---------------<["+ String.format("%1$10s", a)+" ]>---------------------------------+");
-		System.out.println("+ Nº| Marca       | Modelo     | CC    | NºC   |  CV Fiscales  +");
+		System.out.println("+ Nº| Marca        | Modelo     | CC    | NºC   |  CV Fiscales  +");
 		System.out.println("+---+--------------+------------+-------+-------+---------------+");
 	}
 	static void InsertarPie(int a){

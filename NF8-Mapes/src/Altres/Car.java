@@ -1,4 +1,4 @@
-package nf8Conjunts;
+package Altres;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -17,7 +17,7 @@ public class exercici81 {
 		// Se crea un objeto Integer llamado 'array' de la clase ArrayList
 		ArrayList<Integer> array = new ArrayList<Integer>();
 		
-		// Se aï¿½aden dos valores al objeto en la primera y segunda posiciï¿½n.
+		// Se añaden dos valores al objeto en la primera y segunda posiciï¿½n.
 		array.add(0,0);
 		array.add(1,1);
 		
@@ -56,10 +56,10 @@ public class exercici81 {
 		}
 		
 		
-		// Se imprime la posiciï¿½n del valor 2584
+		// Se imprime la posición del valor 2584
 		// El metodo para ubicar la posiciï¿½n de un valor es:   .indexOf(valor);
 		System.out.println("\n--------------------------------------------------------------------------------------------");
-		System.out.print("La posiciÃ³n de 2584 dentro del Arraylist es " + array.indexOf(2584));
+		System.out.print("La posición de 2584 dentro del Arraylist es " + array.indexOf(2584));
 		
 		
 		// Se comprueba si existe un valor

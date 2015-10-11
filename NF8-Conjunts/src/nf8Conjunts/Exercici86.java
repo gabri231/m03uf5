@@ -8,14 +8,14 @@ import java.util.Set;
  * @version 1
  * @since 06.10.2015
  * 
- * Crea un programa Java que faci el següent:
-	1. Creï una LinkedHashSet que suporti 5 objectes de tipus cotxe com hem creat abans.
+ * Crea un programa Java que faci el segÃ¼ent:
+	1. CreÃ¯ una LinkedHashSet que suporti 5 objectes de tipus cotxe com hem creat abans.
 	2. Afegeix-hi dos objectes tipus cotxe:
 		a.Hyundai Atos 1500, 3 
 		b.Ford Focus 2000,4
 	3. Pots afegir-hi duplicats? 
-	4. Obté les dades de tots els objectes amb qualsevol mètode
-	5. Quin ordre hi tenim? Quin tipus de “cua” és?
+	4. Obté les dades de tots els objectes amb qualsevol mÃ¨tode
+	5. Quin ordre hi tenim? Quin tipus de â€œcuaâ€� és?
 
 
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
@@ -24,7 +24,7 @@ public class Exercici86 {
 public static void main(String[] args) {
 		
 		//////////////////////////////////////////////////////////////////////////////////////////////
-		// 1. Creï una LinkedHashSet que suporti 5 objectes de tipus cotxe com hem creat abans.
+		// 1. CreÃ¯ una LinkedHashSet que suporti 5 objectes de tipus cotxe com hem creat abans.
 		//ok
 		// Se crea la lista.
 		LinkedHashSet<Coche> linkedHashDeCoches=new LinkedHashSet<Coche>();
@@ -65,7 +65,7 @@ public static void main(String[] args) {
 		System.out.println("No se pueden añadir elementos duplicados.");
 
 
-		// 	4. Obté les dades de tots els objectes amb qualsevol mètode
+		// 	4. Obté les dades de tots els objectes amb qualsevol mÃ¨tode
 		for (Coche car : linkedHashDeCoches){
 			System.out.println("|"
 					+ String.format("%1$-13s",car.getMarca())
@@ -79,7 +79,7 @@ public static void main(String[] args) {
 					+ String.format("%.2f", car.potenciaFiscal())+"\t|");
 		}
 		
-		//  5. Quin ordre hi tenim? Quin tipus de “cua” és?
+		//  5. Quin ordre hi tenim? Quin tipus de cúa és?
 		linea();
 		System.out.println("Estan por orden de llegada. El tipo de cola es: FIFO.");
 		

@@ -47,9 +47,9 @@ public class Exercici88 {
 		
 		if(!mapDeCoches.containsKey(matricula)){
 			mapDeCoches.put(matricula, putCar);
-			System.out.println("El se ha a√±adido el coche con matricula: "+matricula+".");
+			System.out.println("El se ha aÒadido el coche con matricula: "+matricula+".");
 		}else{
-			System.out.println("ERROR: El coche con la matricula: "+matricula+" ya est√° introducido en el mapa.");
+			System.out.println("ERROR: El coche con la matricula: "+matricula+" ya est· introducido en el mapa.");
 		}
 		linea();
 		//////////////////////////////////////////////////////////////////////////////////////////////
