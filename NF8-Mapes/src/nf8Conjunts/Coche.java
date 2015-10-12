@@ -1,6 +1,6 @@
 package nf8Conjunts;
 
-public class Coche implements Comparable<Coche>{
+public class Coche {
 	String marca, modelo;
 	int cilindrada, cilindres;
 		
@@ -49,10 +49,5 @@ public class Coche implements Comparable<Coche>{
 		return "Coche[marca=" + marca + ", modelo=" + modelo + ", cilindrada=" + cilindrada + ", cilindres="
 				+ cilindres + ", pontenciaFiscal=" + String.format("%1$-5s",String.format("%.2f",potenciaFiscal())) + "]";
 	}
-
-	@Override
-	public int compareTo(Coche that) {
-		return this.getMarca().compareTo(that.getMarca());
-	}
-
+	// ─ │ ┌ ┐ └ ┘ ├ ┤ ┬ ┬ ┴ ┼═ ║ ╒ ╒ ╓ ╔ ╕ ╖ ╗ ╘ ╙ ╚ ╛ ╜ ╝ ╞ ╟╠ ╠ ╡ ╢ ╣ ╤ ╥╥ ╦ ╧ ╨ ╩ ╪ ╫ ╫ ╬  ▲ ► ▼ ◄ ● ▄▀ ▒ ░
 }
