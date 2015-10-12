@@ -2,10 +2,7 @@ package nf8Conjunts;
 
 import java.util.ArrayList;
 import java.util.Map;
-import java.util.PriorityQueue;
 import java.util.TreeMap;
-
-import javax.swing.SingleSelectionModel;
 
 /** Un programa Java simple - Colas 
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
