@@ -182,7 +182,6 @@ public class Exercici89 {
 		// Guardamos en nuestro arrayList el resultado de los cilindros 
 		int cilindros = 4;
 		arrayDeCochesPorCilindro = mapDeCochesPorCilindro(cilindros,mapaDeCoches);
-		//System.out.println(arrayDeCochesPorCilindro.getClass().getName());
 		System.out.println("Se imprime el array con los coches con "+ cilindros +" cilindros.");
 		imprimirArray(arrayDeCochesPorCilindro);
 		
