@@ -1,0 +1,4 @@
+Uncaught java.lang.Error exception in thread "main" in a method Recuperem.Exercici2.main() with signature ([Ljava/lang/String;)V
+Exception in thread "main" java.lang.Error: Unresolved compilation problem: 
+
+	at Recuperem.Exercici2.main(Exercici2.java:29) [file:/home/users/inf/wiaw2/iaw26567249/workspace/eRecu/bin/Recuperem/Exercici2.class]
