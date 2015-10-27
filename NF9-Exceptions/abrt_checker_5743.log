@@ -1,4 +1,0 @@
-Uncaught java.lang.IllegalArgumentException exception in thread "main" in a method exceptions.Exercici4$Persona.setEdat() with signature (I)V
-Exception in thread "main" java.lang.IllegalArgumentException
-	at exceptions.Exercici4$Persona.setEdat(Exercici4.java:27) [file:/home/users/inf/wiaw2/iaw26567249/workspace/NF9-Exceptions/bin/exceptions/Exercici4$Persona.class]
-	at exceptions.Exercici4.main(Exercici4.java:18) [file:/home/users/inf/wiaw2/iaw26567249/workspace/NF9-Exceptions/bin/exceptions/Exercici4.class]

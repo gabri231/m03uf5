@@ -1,6 +1,0 @@
-Uncaught java.lang.ArrayIndexOutOfBoundsException exception in thread "main" in a method exceptions.Exercici1.funcio3() with signature ()V
-Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 3
-	at exceptions.Exercici1.funcio3(Exercici1.java:40) [file:/home/users/inf/wiaw2/iaw26567249/workspace/NF9-Exceptions/bin/exceptions/Exercici1.class]
-	at exceptions.Exercici1.funcio2(Exercici1.java:44) [file:/home/users/inf/wiaw2/iaw26567249/workspace/NF9-Exceptions/bin/exceptions/Exercici1.class]
-	at exceptions.Exercici1.funcio1(Exercici1.java:47) [file:/home/users/inf/wiaw2/iaw26567249/workspace/NF9-Exceptions/bin/exceptions/Exercici1.class]
-	at exceptions.Exercici1.main(Exercici1.java:6) [file:/home/users/inf/wiaw2/iaw26567249/workspace/NF9-Exceptions/bin/exceptions/Exercici1.class]

@@ -1,3 +1,0 @@
-Uncaught java.lang.ArithmeticException exception in thread "main" in a method exceptions.Exercici3.main() with signature ([Ljava/lang/String;)V
-Exception in thread "main" java.lang.ArithmeticException: / by zero
-	at exceptions.Exercici3.main(Exercici3.java:9) [file:/home/users/inf/wiaw2/iaw26567249/workspace/NF9-Exceptions/bin/exceptions/Exercici3.class]
