@@ -1,0 +1,5 @@
+Uncaught java.lang.Error exception in thread "main" in a method exceptions.Exercici1.main() with signature ([Ljava/lang/String;)V
+Exception in thread "main" java.lang.Error: Unresolved compilation problem: 
+	Syntax error, insert "VariableDeclaratorId" to complete FormalParameter
+
+	at exceptions.Exercici1.main(Exercici1.java:9) [file:/home/users/inf/wiaw2/iaw26567249/workspace/NF9-Exceptions/bin/exceptions/Exercici1.class]

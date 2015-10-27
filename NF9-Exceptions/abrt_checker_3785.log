@@ -1,0 +1,4 @@
+Uncaught java.lang.StringIndexOutOfBoundsException exception in thread "main" in a method java.lang.String.charAt() with signature (I)C
+Exception in thread "main" java.lang.StringIndexOutOfBoundsException: String index out of range: 50
+	at java.lang.String.charAt(String.java:658) [jar:file:/usr/lib/jvm/java-1.7.0-openjdk-1.7.0.60-2.4.3.0.fc20.x86_64/jre/lib/rt.jar!/java/lang/String.class]
+	at exceptions.Exercici1.main(Exercici1.java:21) [file:/home/users/inf/wiaw2/iaw26567249/workspace/NF9-Exceptions/bin/exceptions/Exercici1.class]
