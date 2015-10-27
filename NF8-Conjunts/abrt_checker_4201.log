@@ -1,0 +1,4 @@
+Uncaught java.lang.NullPointerException exception in thread "main" in a method nf8Conjunts.Exercici85.ImprimirCoches() with signature (Ljava/util/Set;)V
+Exception in thread "main" java.lang.NullPointerException
+	at nf8Conjunts.Exercici85.ImprimirCoches(Exercici85.java:153) [file:/home/users/inf/wiaw2/iaw26567249/git/m03/NF8-Conjunts/bin/nf8Conjunts/Exercici85.class]
+	at nf8Conjunts.Exercici85.main(Exercici85.java:55) [file:/home/users/inf/wiaw2/iaw26567249/git/m03/NF8-Conjunts/bin/nf8Conjunts/Exercici85.class]
