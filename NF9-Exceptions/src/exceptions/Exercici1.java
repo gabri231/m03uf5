@@ -6,19 +6,6 @@ public class Exercici1 {
 		System.out.println("main");
 		funcio1();
 		System.out.println("   main fin");
-//		try{
-//			String str = "Java Code Geeks!";
-//			System.out.println("Length: " + str.length());
-//			char ch = str.charAt(50);
-//		}
-//		catch(StringIndexOutOfBoundsException e){
-//			System.out.println("ERROR String. El missatge d'error és el següent:");
-//			System.out.println(e.getMessage());
-//		}
-//		finally{
-//			System.out.println("Finally");
-//		}
-
 	}
 
 	static void funcio3(){
@@ -30,6 +17,9 @@ public class Exercici1 {
 			}
 		}catch(ArrayIndexOutOfBoundsException e){
 			System.out.println("Error en funcio3");
+		}
+		finally{
+			System.out.println("Finally");
 		}
 		System.out.println("Funcio3 fin");
 	}
