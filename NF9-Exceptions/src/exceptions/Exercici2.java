@@ -11,8 +11,8 @@ public class Exercici2 {
 			System.out.println("ERROR Security Tipo de excepción: \n"+ e.toString());
 			System.out.println(e.getMessage());
 		} catch ( IOException e) {
-			System.out.println("ERROR I/O Tipo de excepción: \n"+ e.toString());
-			System.out.println(e.getClass().getName());
+			System.out.println("ERROR I/O Tipo de excepción: \n"+ e);
+			System.out.println("-> "+e.getClass().getName());
 			e.printStackTrace();
 		}
 

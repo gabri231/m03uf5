@@ -13,12 +13,13 @@ public class Exercici3 {
 		}catch(ArithmeticException e){
 			System.out.println("Error de división. Estás dividiendo por cero");
 			System.out.println("Tipo de error: " + e.getClass().getName());
+			System.out.println("Mensaje del error: "+e.getMessage());
 		}
 	}
 
 	static int divisio(int dividendo, int divisor) throws ArithmeticException{
 		if (divisor == 0){
-			throw new ArithmeticException();
+			throw new ArithmeticException("diviendo por cero");
 		}else{
 			return dividendo/divisor;	
 		}
