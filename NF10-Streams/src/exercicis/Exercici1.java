@@ -6,6 +6,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+
 /**
  * 
  * @author Gabriel
@@ -13,87 +14,89 @@ import java.io.IOException;
  * @version 1v
  */
 public class Exercici1 {
-	// EXERCICI 1. 
-	// Escriu un programa que crei un nou arxiu mitjançant la concatenació de diversos arxius alhora. 
-	// El programa ens demanarà una sèrie d'arxius d'on llegirem les dades i el nom del nou arxiu on
+	// EXERCICI 1.
+	// Escriu un programa que crei un nou arxiu mitjançant la concatenació de
+	// diversos arxius alhora.
+	// El programa ens demanarà una sèrie d'arxius d'on llegirem les dades i el
+	// nom del nou arxiu on
 	// les escriurem.
-	
-	// Cada arxiu d'origen ha d'existir (si no, cal mostrar un missatge d'error i la sortida). 
-	// L'últim arxiu , és el nom de l'arxiu que s'ha de crear, i no ha d'existir.
-	
-	// Crea el nou arxiu amb l'obertura dels arxius d'origen d'un en un i en ordre. 
-	// Realitza la lectura i escriptura de cada arxiu byte per byte i recorda tancar
+
+	// Cada arxiu d'origen ha d'existir (si no, cal mostrar un missatge d'error
+	// i la sortida).
+	// L'últim arxiu , és el nom de l'arxiu que s'ha de crear, i no ha
+	// d'existir.
+
+	// Crea el nou arxiu amb l'obertura dels arxius d'origen d'un en un i en
+	// ordre.
+	// Realitza la lectura i escriptura de cada arxiu byte per byte i recorda
+	// tancar
 	// els arxius un cop n'hagis fet ús.
-	
-	// TODO Auto-generated method stub
+
 	public static void main(String[] args) throws IOException {
 
 		FileInputStream inA = null;
 		FileInputStream inB = null;
 		FileInputStream inC = null;
-		FileInputStream inD = null;
-        FileOutputStream out = null;
+		FileOutputStream out = null;
 
-        try {
-        	inA = new FileInputStream(pedirArchivo());
-            inB = new FileInputStream(pedirArchivo());
-            inC = new FileInputStream(pedirArchivo());
-            try {
-				out = crearFicheroFinal(pedirArchivo());
-				
-			}catch (AlertaFichero e) {
-				System.out.println(e.getMessage());
-			}catch (Exception e) {
-				System.out.println(e.getMessage());
+		try {
+			inA = new FileInputStream(pedirArchivo());
+			inB = new FileInputStream(pedirArchivo());
+			inC = new FileInputStream(pedirArchivo());
+
+			out = crearFicheroFinal(pedirArchivo());
+			añadir(inA, out);
+			añadir(inB, out);
+			añadir(inC, out);
+
+		} catch (FileNotFoundException ficheroNoEncontrado) {
+			System.out.println("ERROR: " + ficheroNoEncontrado.getMessage());
+		} catch (AlertaFichero e) {
+			System.out.println("ERROR: " + e.msg);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+
+		} finally {
+			System.out.println("Fin del programa");
+			if (inA != null) {
+				inA.close();
 			}
-            try {
-				añadir(inA, out);
-				añadir(inB, out);
-				añadir(inC, out);
+			if (inB != null) {
+				inB.close();
 			}
-            catch (Exception e) {
-				// TODO Auto-generated catch block
-            	System.out.println("ERROR");
+			if (inC != null) {
+				inC.close();
 			}
-        }
-        catch (FileNotFoundException ficheroNoEncontrado){
-        	System.out.println("ERROR: " + ficheroNoEncontrado.getMessage());
-        } finally {
-            if (inA != null) {
-                inA.close();	
-            }
-            if (inB != null) {
-                inB.close();
-            }
-            if (inC != null) {
-                inC.close();
-            }
-            if (out != null) {
-                out.close();
-            }
-        }
+			if (out != null) {
+				out.close();
+			}
+		}
 	}
-	public static void añadir(FileInputStream paramArchivo, FileOutputStream paramOut) throws IOException{
-        int c;
-        while ((c = paramArchivo.read()) != -1) {
-        	//System.out.println(c);
-            paramOut.write(c);
-        }
+
+	public static void añadir(FileInputStream paramArchivo, FileOutputStream paramOut) throws IOException {
+		int c;
+		while ((c = paramArchivo.read()) != -1) {
+			// System.out.println(c);
+			paramOut.write(c);
+		}
 	}
-	public static String pedirArchivo(){
-        Scanner s = new Scanner (System.in);
-        System.out.print("Introduce un archivo: ");
-        String fichero = s.nextLine();
-        return "ficheros/ex1/"+fichero;        
+
+	public static String pedirArchivo() {
+		Scanner s = new Scanner(System.in);
+		System.out.print("Introduce un archivo: ");
+		String fichero = s.nextLine();
+		return "ficheros/ex1/" + fichero;
 	}
-	public static FileOutputStream crearFicheroFinal(String fichero) throws Exception,AlertaFichero{
+
+	public static FileOutputStream crearFicheroFinal(String fichero) throws Exception, AlertaFichero {
 		File archivoFinal = new File(fichero);
 		FileOutputStream out = null;
-		if (archivoFinal.exists()){
-			throw new AlertaFichero("El archivo final ya existe.");
-		}else{
+		if (archivoFinal.exists()) {
+			throw new AlertaFichero("El archivo: " + fichero + " ya existe.");
+		} else {
 			out = new FileOutputStream(fichero);
+			return out;
 		}
-		return out;
+
 	}
 }
