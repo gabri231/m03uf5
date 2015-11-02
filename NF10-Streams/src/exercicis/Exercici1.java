@@ -40,11 +40,11 @@ public class Exercici1 {
 		FileOutputStream out = null;
 
 		try {
-			inA = new FileInputStream(pedirArchivo());
-			inB = new FileInputStream(pedirArchivo());
-			inC = new FileInputStream(pedirArchivo());
-
-			out = crearFicheroFinal(pedirArchivo());
+			inA = new FileInputStream(pedirArchivo("[archivo a leer] Introduce un archivo: "));
+			inB = new FileInputStream(pedirArchivo("[archivo a leer] Introduce un archivo: "));
+			inC = new FileInputStream(pedirArchivo("[archivo a leer] Introduce un archivo: "));
+			out = crearFicheroFinal(pedirArchivo("Introduce el nombre del archivo final: "));
+			
 			añadir(inA, out);
 			añadir(inB, out);
 			añadir(inC, out);
@@ -81,9 +81,9 @@ public class Exercici1 {
 		}
 	}
 
-	public static String pedirArchivo() {
+	public static String pedirArchivo(String mensaje) {
 		Scanner s = new Scanner(System.in);
-		System.out.print("Introduce un archivo: ");
+		System.out.print(mensaje);
 		String fichero = s.nextLine();
 		return "ficheros/ex1/" + fichero;
 	}
