@@ -1,0 +1,5 @@
+Uncaught java.lang.Error exception in thread "main" in a method exNF9.Examen.main() with signature ([Ljava/lang/String;)V
+Exception in thread "main" java.lang.Error: Unresolved compilation problem: 
+	The method println(boolean) in the type PrintStream is not applicable for the arguments (void)
+
+	at exNF9.Examen.main(Examen.java:55) [file:/home/users/inf/wiaw2/iaw26567249/workspace/ExNF9Exceptions/bin/exNF9/Examen.class]
