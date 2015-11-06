@@ -36,27 +36,22 @@ public class Exercici2 {
 
 		FileInputStream bigfile = null;
 		String baseName 		= null;
-		int chunkSize 			= pedirChunk();
-		
+		int chunkSize 			= 0;
 
 		// mirar los metodos de fileImputStream
 		// mirar los metodos de fileOutStream
-		// input.read(copia, posiciónInicial, chunk
-		// http://www.tutorialspoint.com/java/io/filterinputstream_read_byte_len.htm
+		// input.read(copia, posiciónInicial, chunk)
+		// http://www.tutorialspoint.com/java/io/fileinputstream_read_byte_len.htm
 		
 		try {
 			bigfile = new FileInputStream(pedirArchivo("[archivo bigfile]: ")); // Nombre del archivo grande a dividir.
+			chunkSize = pedirChunk();
 			dividirArchivo(bigfile, baseName, chunkSize);
-			
-			
-			
 			
 			//out = crearFicheroFinal(pedirArchivo("[baseName]: "));
 
 		} catch (FileNotFoundException ficheroNoEncontrado) {
 			System.out.println("ERROR: " + ficheroNoEncontrado.getMessage());
-//		} catch (AlertaFichero e) {
-//			System.out.println("ERROR: " + e.msg);
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 
@@ -67,25 +62,48 @@ public class Exercici2 {
 //			if (out != null) {
 //				out.close();
 //			}
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
 		}
 	}
 	
 	public static void dividirArchivo(FileInputStream paramArchivo, String baseName, int chunkSize){
-		byte[] b = new byte[chunkSize];
+		byte[] bs = new byte[chunkSize];
+
+
+		byte [] b= new byte[5];
+		   
 //		while ( != -1) {
 //			paramArchivo.read(b))
 //			paramOut.write(c);
 //		}
-		
-	}
-	
-	public static void añadir(FileInputStream paramArchivo, FileOutputStream paramOut) throws IOException {
-		int c;
-		while ((c = paramArchivo.read()) != -1) {
-			paramOut.write(c);
+		public class Ex2_byte {
+			public static void main(String[] args) throws IOException, FileNotFoundException {
+
+				FileInputStream in = new FileInputStream("bigOne.txt");
+				byte[] buf = new byte[15];
+				int bytesRead;
+				int i= 0;
+				while ((bytesRead = in.read(buf)) > 0) {
+					i++;
+					String nombre = "out"+i+".txt"; 
+					FileOutputStream out = new FileOutputStream(nombre);
+					out.write(buf, 0, bytesRead);
+					out.close();
+				}	
+				in.close();
+			}
 		}
 	}
-
+	
 	public static String pedirArchivo(String mensaje) {
 		Scanner s = new Scanner(System.in);
 		System.out.print(mensaje);
