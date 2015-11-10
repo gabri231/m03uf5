@@ -15,6 +15,7 @@ import java.io.IOException;
  * @version 1v
  */
 public class Exercici2 {
+	
 	//	EXERCICI 2.
 	//	Crear un programa que divideixi  un arxiu en diversos arxius.
 	
@@ -62,46 +63,21 @@ public class Exercici2 {
 //			if (out != null) {
 //				out.close();
 //			}
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
 		}
 	}
 	
-	public static void dividirArchivo(FileInputStream paramArchivo, String baseName, int chunkSize){
-		byte[] bs = new byte[chunkSize];
-
-
-		byte [] b= new byte[5];
-		   
-//		while ( != -1) {
-//			paramArchivo.read(b))
-//			paramOut.write(c);
-//		}
-		public class Ex2_byte {
-			public static void main(String[] args) throws IOException, FileNotFoundException {
-
-				FileInputStream in = new FileInputStream("bigOne.txt");
-				byte[] buf = new byte[15];
-				int bytesRead;
-				int i= 0;
-				while ((bytesRead = in.read(buf)) > 0) {
-					i++;
-					String nombre = "out"+i+".txt"; 
-					FileOutputStream out = new FileOutputStream(nombre);
-					out.write(buf, 0, bytesRead);
-					out.close();
-				}	
-				in.close();
-			}
-		}
+	public static void dividirArchivo(FileInputStream paramArchivo, String baseName, int chunkSize)  throws IOException {
+		byte[] buf = new byte[chunkSize];
+		int bytesRead;
+		int i= 0;
+		while ((bytesRead = paramArchivo.read(buf)) > 0) {
+			i++;
+			String nombre = baseName+i+".txt"; 
+			FileOutputStream out = new FileOutputStream(nombre);
+			out.write(buf, 0, bytesRead);
+			out.close();
+		}	
+		paramArchivo.close();
 	}
 	
 	public static String pedirArchivo(String mensaje) {
