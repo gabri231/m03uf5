@@ -1,4 +1,4 @@
-package exercicis.src;
+package exercicisStreams;
 
 import java.io.BufferedReader;
 import java.io.File;

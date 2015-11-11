@@ -1,4 +1,4 @@
-package exercicis;
+package ex;
 
 import java.util.Scanner;
 import java.io.File;
