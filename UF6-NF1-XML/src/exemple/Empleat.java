@@ -2,9 +2,11 @@ package exemple;
 
 import javax.xml.bind.annotation.*;
 
+// Con accessor type se define que no habra solo un elemento en el XML
+@XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement (name = "Treballador")
 // Si no se dice el orden se guarda todos los atributos de la clase.	
-@XmlType (propOrder = {"nom", "carrer", "edat", "sexe"})
+@XmlType (propOrder = {"id", "nom", "carrec", "edat", "sexe", "password"})
 
 
 public class Empleat {
@@ -28,7 +30,6 @@ public class Empleat {
 		this.password = password;
 	}
 	
-	@XmlAttribute
 	public int getId() {
 		return id;
 	}
