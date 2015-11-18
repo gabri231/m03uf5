@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Treballador>
+    <id>125</id>
+    <sexe>home</sexe>
+    <edat>23</edat>
+    <nom>gabriel</nom>
+    <carrec>big boss</carrec>
+    <password>P@ssw0rd</password>
+</Treballador>

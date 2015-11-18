@@ -6,8 +6,10 @@ import javax.xml.bind.annotation.*;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement (name = "Treballador")
 // Si no se dice el orden se guarda todos los atributos de la clase.	
-@XmlType (propOrder = {"id", "nom", "carrec", "edat", "sexe", "password"})
 
+
+// *** Se puede y no se puede poner.
+//@XmlType(propOrder = {"id", "nom", "carrec", "edat", "sexe", "password"})
 
 public class Empleat {
 	private int id;
@@ -44,7 +46,7 @@ public class Empleat {
 	}
 	
 	// Para cambiar el atributo
-	@XmlElement (name="genere")
+	//@XmlElement (name="genere")
 	public int getEdat() {
 		return edat;
 	}
