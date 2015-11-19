@@ -1,4 +1,4 @@
-package ex;
+package pruebas;
 
 public class AlertaFichero extends Exception {
 

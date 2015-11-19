@@ -1,4 +1,4 @@
-package ex;
+package pruebas;
 
 import java.util.Scanner;
 import java.io.File;

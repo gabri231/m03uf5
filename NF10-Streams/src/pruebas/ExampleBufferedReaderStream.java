@@ -1,4 +1,4 @@
-package streams;
+package pruebas;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
