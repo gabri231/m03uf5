@@ -10,9 +10,14 @@ import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 
 public class Programa {
-	static Empleados employees = new Empleados(); 
-		static {
-		employees.setEmpleados(new ArrayList<Empleado>());
+	
+	
+	public static void main(String[] args) throws JAXBException 
+	{
+		Empleados empleados = new Empleados(); 
+		
+		
+		empleados.setEmpleados(new ArrayList<Empleado>());
 		
 		Empleado emp = new Empleado();
 		emp.setId(1);
@@ -26,13 +31,10 @@ public class Programa {
 		emp2.setApellido("Calle");
 		emp2.setIngresos(90.0);
 		
-		employees.getEmpleados().add(emp);
-		employees.getEmpleados().add(emp2);
-	}
+		empleados.getEmpleados().add(emp);
+		empleados.getEmpleados().add(emp2);
 	
-	public static void main(String[] args) throws JAXBException 
-	{
-		marshaling();
+		marshaling(empleados);
 		System.out.println("************************************************");
 		unMarshaling();
 	}
@@ -48,13 +50,13 @@ public class Programa {
 		}
 	}
 
-	private static void marshaling() throws JAXBException {
+	private static void marshaling(Empleados employees) throws JAXBException {
 		JAXBContext jaxbContext = JAXBContext.newInstance(Empleados.class);
 		Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
  
 		jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
  
 		jaxbMarshaller.marshal(employees, System.out);
-		jaxbMarshaller.marshal(employees, new File("c:/temp/employees.xml"));
+		jaxbMarshaller.marshal(employees, new File("employees.xml"));
 	}
 }
