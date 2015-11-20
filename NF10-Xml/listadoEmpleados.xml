@@ -1,27 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Company_Staff>
-    <Trabajador>
-        <id>125</id>
-        <sexe>home</sexe>
-        <edat>23</edat>
+    <Trabajador id="125">
         <nom>gabriel</nom>
         <carrec>big boss</carrec>
-        <password>P@ssw0rd</password>
+        <edad>23</edad>
+        <genere>home</genere>
     </Trabajador>
-    <Trabajador>
-        <id>123</id>
-        <sexe>home</sexe>
-        <edat>40</edat>
+    <Trabajador id="123">
         <nom>xavi</nom>
         <carrec>account manager</carrec>
-        <password>P@ssw0rd</password>
+        <edad>40</edad>
+        <genere>home</genere>
     </Trabajador>
-    <Trabajador>
-        <id>121</id>
-        <sexe>dona</sexe>
-        <edat>23</edat>
+    <Trabajador id="121">
         <nom>marta</nom>
         <carrec>designer</carrec>
-        <password>P@ssw0rd</password>
+        <edad>23</edad>
+        <genere>dona</genere>
     </Trabajador>
 </Company_Staff>

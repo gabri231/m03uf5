@@ -7,14 +7,18 @@ import javax.xml.bind.annotation.*;
 @XmlRootElement (name = "Treballador")
 // Si no se dice el orden se guarda todos los atributos de la clase.	
 
-//@XmlType(propOrder = {"id", "nom", "carrec", "edat", "sexe", "password"})
-
+@XmlType(propOrder = {"id", "nom", "carrec", "edat", "sexe"})
 public class Empleado {
+	@XmlAttribute
 	private int id;
+	@XmlElement(name="genere")
 	private String sexe;
+	@XmlElement(name="edad")
 	private int edat;
 	private	String nom;
 	private String carrec;
+	// Si se pone @XmlTransient, el contenido no se vuelca a XML
+	@XmlTransient
 	private String password;
 	
 	public Empleado() {
@@ -43,8 +47,6 @@ public class Empleado {
 		this.sexe = sexe;
 	}
 	
-	// Para cambiar el atributo
-	//@XmlElement (name="genere")
 	public int getEdat() {
 		return edat;
 	}
@@ -65,7 +67,7 @@ public class Empleado {
 	}
 	
 	// con @XmlTransient No se muestra el contenido.
-	@XmlTransient
+	//@XmlTransient
 	public String getPassword() {
 		return password;
 	}

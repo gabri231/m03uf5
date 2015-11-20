@@ -18,31 +18,21 @@ public class JavaXml {
 		Empleado trabajador2 = new Empleado(123, "home", 40, "xavi", "account manager", "P@ssw0rd");
 		Empleado trabajador3 = new Empleado(121, "dona", 23, "marta", "designer", "P@ssw0rd");
 		try {
-//			if(objetoAXml(trabajador))
-//				System.out.println("Exito al crear el archivo XML.");
-//			else
-//				System.out.println("Fracaso al crear el archivo XML");
-			
-//			trabajador = xmlAObjeto();
-//			System.out.println(trabajador);
-			
-//			Staff trabajadores = new Staff();
-//			trabajadores.add(trabajador);
-//			trabajadores.add(trabajador2);
-//			trabajadores.add(trabajador3);
-			
-			// Marshal
-			//File fichero = new File(NOM_FITXER_EMPLEATS);
-			//marshalLista(trabajadores, fichero);
-			
-			// unMarshal
-//			File fichero2 = new File(NOM_FITXER_EMPLEATS);
-//			Staff listado = unMarshalLista(fichero2);
-//			if (listado != null){
-//				for (Empleat trabajador1 : listado.getTrabajadores()){
-//					System.out.println(trabajador1);
-//				}
-//			}
+			Staff trabajadores = new Staff();
+			trabajadores.add(trabajador);
+			trabajadores.add(trabajador2);
+			trabajadores.add(trabajador3);
+			//Marshal
+			File fichero = new File(NOM_FITXER_EMPLEATS);
+			marshalLista(trabajadores, fichero);
+			//unMarshal
+			File fichero2 = new File(NOM_FITXER_EMPLEATS);
+			Staff listado = unMarshalLista(fichero2);
+			if (listado != null){
+				for (Empleado trabajador1 : listado.getTrabajadores()){
+					System.out.println(trabajador1);
+				}
+			}
 			
 					    
 		} catch (Exception e) {
@@ -58,6 +48,7 @@ public class JavaXml {
 			
 			Marshaller m = contexte.createMarshaller();
 			m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+			m.marshal(trabajadores, System.out);
 			m.marshal(trabajadores, writer);
 			System.out.println("Se ha creado el fichero XML en la dirección: " + file.getAbsolutePath());
 			writer.close();
@@ -80,33 +71,4 @@ public class JavaXml {
 			return null;
 		}		
 	}
-
-	// Este metodo es para pasar de XML a Objeto	
-	private static Empleado xmlAObjeto(){
-		try {
-			JAXBContext contexte = JAXBContext.newInstance(Empleado.class);
-			Unmarshaller um = contexte.createUnmarshaller();
-			Empleado currante = (Empleado) um.unmarshal(new File(NOM_FITXER_TREBALLADOR));
-			return currante;
-		} catch (JAXBException e) {
-			e.printStackTrace();
-		}
-		return null;
-	}
-	
-	// Este metodo es para pasar de Objeto a XML
-	private static boolean objetoAXml(Empleado treballador){
-		try {
-			JAXBContext contexte = JAXBContext.newInstance(Empleado.class);
-			Marshaller m = contexte.createMarshaller();
-			m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-			//m.marshal(treballador, System.out);
-			m.marshal(treballador, new File(NOM_FITXER));
-			return true;
-		} catch (JAXBException e) {
-			e.printStackTrace();
-			return false;
-		}
-	}
-
 }
