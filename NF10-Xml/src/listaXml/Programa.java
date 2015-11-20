@@ -11,7 +11,6 @@ import javax.xml.bind.Unmarshaller;
 
 public class Programa {
 	
-	
 	public static void main(String[] args) throws JAXBException 
 	{
 		Empleados empleados = new Empleados(); 

@@ -3,7 +3,8 @@ package listaXml;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlRootElement;
+//import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlValue;
 
 //@XmlRootElement(name = "employee")
 @XmlAccessorType (XmlAccessType.FIELD)
@@ -12,14 +13,17 @@ public class Empleado
 	@XmlAttribute
 	private Integer id;
 	private String nombre;
-	private String apellido;
+	private String apellido;	
 	private double ingresos;
+	
+	
 	public Integer getId() {
 		return id;
 	}
 	public void setId(Integer id) {
 		this.id = id;
 	}
+
 	public String getNombre() {
 		return nombre;
 	}
