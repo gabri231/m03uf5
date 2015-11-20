@@ -1,11 +1,14 @@
-package pruebas;
+package pruebasFinales;
 
 import java.util.Scanner;
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 
 /**
  * 
@@ -43,19 +46,27 @@ public class Exercici1 {
 			inA = new FileInputStream(pedirArchivo("[archivo a leer] Introduce un archivo: "));
 			inB = new FileInputStream(pedirArchivo("[archivo a leer] Introduce un archivo: "));
 			inC = new FileInputStream(pedirArchivo("[archivo a leer] Introduce un archivo: "));
-			out = crearFicheroFinal(pedirArchivo("Introduce el nombre del archivo final: "));
+			String archivoFinal = pedirArchivo("Introduce el nombre del archivo final: ");
+			out = crearFicheroFinal(archivoFinal);
 			
 			añadir(inA, out);
 			añadir(inB, out);
 			añadir(inC, out);
-
+			
+			leerArchivoFinal(archivoFinal);
+			
 		} catch (FileNotFoundException ficheroNoEncontrado) {
 			System.out.println("ERROR: " + ficheroNoEncontrado.getMessage());
 		} catch (AlertaFichero e) {
 			System.out.println("ERROR: " + e.msg);
+		} catch (IOException e) {
+			System.out.println("ERROR: Se ha producido algún error en I/O");
+			System.out.println("El error está en la linea: "
+					+ e.getStackTrace()[0].getLineNumber());
 		} catch (Exception e) {
-			System.out.println(e.getMessage());
-
+			System.out.println("Se ha producido el error: " + e.toString());
+			System.out.println("El error está en la linea: "
+					+ e.getStackTrace()[0].getLineNumber());
 		} finally {
 			System.out.println("Fin del programa");
 			if (inA != null) {
@@ -73,6 +84,27 @@ public class Exercici1 {
 		}
 	}
 
+	private static void leerArchivoFinal(String fichero) throws IOException {
+		// Abrir el archivo
+		FileReader fr = new FileReader(fichero);
+		BufferedReader br = new BufferedReader(fr);
+		String linea;
+
+		//Leer archivo por linea
+		System.out.println("El archivo " + fichero + " contiene: ");
+		System.out.println("-------------------------------------");
+		while ((linea = br.readLine()) != null)   {
+		  // Mostrar el resultado en la consola
+		  System.out.println(linea);
+		}
+		System.out.println("-------------------------------------");
+
+		//Cerrar el archivo
+		br.close();
+		fr.close();
+		
+	}
+
 	public static void añadir(FileInputStream paramArchivo, FileOutputStream paramOut) throws IOException {
 		int c;
 		while ((c = paramArchivo.read()) != -1) {
@@ -88,15 +120,19 @@ public class Exercici1 {
 		return "ficheros/ex1/" + fichero;
 	}
 
-	public static FileOutputStream crearFicheroFinal(String fichero) throws Exception, AlertaFichero {
+	public static FileOutputStream crearFicheroFinal(String fichero) throws AlertaFichero, FileNotFoundException  {
 		File archivoFinal = new File(fichero);
 		FileOutputStream out = null;
 		if (archivoFinal.exists()) {
 			throw new AlertaFichero("El archivo: " + fichero + " ya existe.");
 		} else {
 			out = new FileOutputStream(fichero);
+			if (archivoFinal.exists()){
+				System.out.println("El archivo "+ fichero +" se ha creado correctamente.");
+			}else{
+				System.out.println("Ha habido algún problema al crear el archivo: "+ fichero);
+			}
 			return out;
 		}
-
 	}
 }

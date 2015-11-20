@@ -1,4 +1,4 @@
-package pruebas;
+package pruebasFinales;
 
 import java.util.Scanner;
 import java.io.File;
@@ -38,31 +38,25 @@ public class Exercici2 {
 		FileInputStream bigfile = null;
 		String baseName 		= null;
 		int chunkSize 			= 0;
-
-		// mirar los metodos de fileImputStream
-		// mirar los metodos de fileOutStream
-		// input.read(copia, posiciónInicial, chunk)
-		// http://www.tutorialspoint.com/java/io/fileinputstream_read_byte_len.htm
-		
+	
 		try {
 			bigfile = new FileInputStream(pedirArchivo("[archivo bigfile]: ")); // Nombre del archivo grande a dividir.
 			chunkSize = pedirChunk();
+			baseName = pedirBaseName();
+			
 			dividirArchivo(bigfile, baseName, chunkSize);
 			
-			//out = crearFicheroFinal(pedirArchivo("[baseName]: "));
-
 		} catch (FileNotFoundException ficheroNoEncontrado) {
 			System.out.println("ERROR: " + ficheroNoEncontrado.getMessage());
+			
+		} catch (IOException e) {
+			System.out.println("Ha habido un error de I/O" + e.toString());
+			
 		} catch (Exception e) {
-			System.out.println(e.getMessage());
-
+			System.out.println("Ha ocurrido el siguiente error: " + e.toString());
+			
 		} finally {
 			System.out.println("Fin del programa");
-
-
-//			if (out != null) {
-//				out.close();
-//			}
 		}
 	}
 	
@@ -76,7 +70,8 @@ public class Exercici2 {
 			FileOutputStream out = new FileOutputStream(nombre);
 			out.write(buf, 0, bytesRead);
 			out.close();
-		}	
+		}
+		System.out.println("Se han creado " + i + " ficheros.");
 		paramArchivo.close();
 	}
 	
@@ -86,22 +81,16 @@ public class Exercici2 {
 		String fichero = s.nextLine();
 		return "ficheros/ex2/" + fichero;
 	}
+	private static String pedirBaseName() {
+		Scanner s = new Scanner(System.in);
+		System.out.print("Introduce el baseName para cada archivo pequeño: ");
+		String baseName = s.nextLine();
+		return "ficheros/ex2/" + baseName;
+	}
 	public static int pedirChunk() {
 		Scanner s = new Scanner(System.in);
 		System.out.print("Introduce el tamaño de cada archivo pequeño(en bytes): ");
 		int fichero = s.nextInt();
 		return fichero;
-	}
-
-	public static FileOutputStream crearFicheroFinal(String fichero) throws Exception, AlertaFichero {
-		File archivoFinal = new File(fichero);
-		FileOutputStream out = null;
-		if (archivoFinal.exists()) {
-			throw new AlertaFichero("El archivo: " + fichero + " ya existe.");
-		} else {
-			out = new FileOutputStream(fichero);
-			return out;
-		}
-
 	}
 }

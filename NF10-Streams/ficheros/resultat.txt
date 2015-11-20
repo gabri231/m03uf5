@@ -1,0 +1,30 @@
+caràcter: E repeticions: 1 percentatge: 0% 
+caràcter: G repeticions: 1 percentatge: 0% 
+caràcter: 
+ repeticions: 8 percentatge: 4% 
+caràcter:   repeticions: 33 percentatge: 16% 
+caràcter: à repeticions: 1 percentatge: 0% 
+caràcter: a repeticions: 19 percentatge: 9% 
+caràcter: b repeticions: 4 percentatge: 2% 
+caràcter: c repeticions: 3 percentatge: 1% 
+caràcter: d repeticions: 3 percentatge: 1% 
+caràcter: e repeticions: 22 percentatge: 11% 
+caràcter: f repeticions: 1 percentatge: 0% 
+caràcter: g repeticions: 1 percentatge: 0% 
+caràcter: h repeticions: 3 percentatge: 1% 
+caràcter: i repeticions: 5 percentatge: 2% 
+caràcter: j repeticions: 2 percentatge: 1% 
+caràcter: l repeticions: 15 percentatge: 7% 
+caràcter: , repeticions: 1 percentatge: 0% 
+caràcter: m repeticions: 5 percentatge: 2% 
+caràcter: n repeticions: 7 percentatge: 3% 
+caràcter: o repeticions: 15 percentatge: 7% 
+caràcter: p repeticions: 1 percentatge: 0% 
+caràcter: q repeticions: 2 percentatge: 1% 
+caràcter: r repeticions: 6 percentatge: 3% 
+caràcter: s repeticions: 15 percentatge: 7% 
+caràcter: t repeticions: 10 percentatge: 5% 
+caràcter: u repeticions: 7 percentatge: 3% 
+caràcter: v repeticions: 4 percentatge: 2% 
+caràcter: y repeticions: 4 percentatge: 2% 
+caràcter: ? repeticions: 1 percentatge: 0% 

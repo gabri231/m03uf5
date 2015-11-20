@@ -13,12 +13,21 @@ import java.util.List;
 
 public class Exercici9 {
 	public static void main(String[] args) {
-			String path="/home/lau/test";
+			String path="d:/backup/hola.txt";
 			
 			File directori = new File(path);
-			List<String> llista = new ArrayList<String>();
-			mostrarFitxersDirectoris(directori ,llista);
-			System.out.println(llista);
+			if (directori.exists() && directori.isDirectory()){
+				List<String> llista = new ArrayList<String>();
+				mostrarFitxersDirectoris(directori ,llista);
+				//System.out.println(llista);
+				if (!llista.isEmpty()){
+					for (String a : llista){
+						System.out.println(a);
+					}
+				}
+			}else{
+				System.out.println("El directori no existeix!!");
+			}
 	}
 
 	private static void mostrarFitxersDirectoris(File directori,

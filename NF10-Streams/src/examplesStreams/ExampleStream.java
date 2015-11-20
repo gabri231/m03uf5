@@ -1,4 +1,4 @@
-package pruebas;
+package examplesStreams;
 
 import java.io.File;
 

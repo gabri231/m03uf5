@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
+//import java.util.Scanner;
 
 /**
  * Escriu un programa que crea un nou arxiu mitjançant la concatenació de
@@ -34,10 +34,10 @@ public class Exercici1 {
 //		}
 //		scanner.close();
 		List<String> arxius = new ArrayList<String>();
-		arxius.add("a.txt");
-		arxius.add("b.txt");
-		arxius.add("c.txt");
-		OutputStream f = new FileOutputStream (new File("d.txt"),true);
+		arxius.add("files/example1/a1.txt");
+		arxius.add("files/example1/a2.txt");
+		arxius.add("files/example1/a3.txt");
+		OutputStream f = new FileOutputStream (new File("files/example1/b.txt"),true);
 		int x = 45098;
 		f.write(x);;
 		f.close();

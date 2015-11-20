@@ -18,7 +18,7 @@ import java.util.Set;
 public class Exercici7 {
 	public static void main(String[] args) throws IOException {
 		Map<Character, Integer> map = new HashMap<Character, Integer>();
-		String arxiu = "ficheros/hola.txt";
+		String arxiu = "characteroutput.txt";
 		FileReader freader = null;
 		try {
 			freader = new FileReader(new File(arxiu));
@@ -47,7 +47,7 @@ public class Exercici7 {
 		FileWriter fwriter = null;
 		try {
 			fwriter = new FileWriter(new File("ficheros/resultat.txt"));
-			Set<Character> set = map.keySet();
+			Set<Character> set = map.keySet(); 
 			for (Character character : set) {
 				fwriter.write("caràcter: " + character + " repeticions: "
 						+ map.get(character) + " percentatge: "
