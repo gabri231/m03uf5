@@ -1,7 +1,7 @@
 //http://www.javahispano.org/certificacion/2011/12/24/genericos-y-colecciones-parte-2-colecciones.html
 package nf8Conjunts;
 import java.util.Comparator;
-import java.util.Set;
+
 import java.util.TreeSet;
 
 
@@ -125,6 +125,12 @@ public static void main(String[] args) {
 	//Fin de main	
 	static void linea(){
 		System.out.println("#########################################################################");
+	}
+	static class OrdenAlfabetico implements Comparator<String> {
+		@Override
+		public int compare(String a1, String a2) {
+			return a1.compareTo(a2);
+		}
 	}
 	
 	static class CocheOrdPotenciaFiscal implements Comparator<Coche>{
